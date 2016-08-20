@@ -55,29 +55,24 @@ public class Exercise17ManagementCD {
 			return false;
 		return true;
 	}
-	public double addCD(){
-		System.out.println("Enter ID CD: ");
-		setIdCD(idCD);
-		System.out.println("Enter Name CD: ");
-		setNameCD(nameCD);
-		System.out.println("Enter Singer: ");
-		setSinger(singer);
-		System.out.println("Enter Number Song: ");
-		setNumberSong(numberSong);
-		System.out.println("Enter Price: ");
-		setPrice(price);
-		System.out.println("Information CD: /nId CD: "+idCD+"/nName: "+nameCD+"/nSinger: "+singer+"/nNumber Song: "+numberSong+"Price: "+price);
+	public void addCD(){
+		
 		if(checkDuplicate(idCD)){
-			
+			addDetailsCD();
 		}
+		System.out.println("Done!");
 	}
+	@SuppressWarnings("unchecked")
 	public double addDetailsCD(){
+		@SuppressWarnings("rawtypes")
 		ArrayList arrayList=new ArrayList();
 		arrayList.add(idCD);
 		arrayList.add(nameCD);
 		arrayList.add(singer);
 		arrayList.add(numberSong);
 		arrayList.add(price);
+		return 1;
 	}
+
 
 }
