@@ -29,16 +29,18 @@ public class MainClass16Salary {
 			double allowance = Double.parseDouble(input.readLine());
 			esalary.setAllowance(allowance); 
 			
+			DecimalFormat decimal=new DecimalFormat("#,###");
 			double incom = esalary.calSalary();
-			System.out.println("Incom: " + String.format("%.0f", incom));
+			System.out.println("Incom: " + decimal.format(incom));
 			
 			double incomeTaxes=esalary.calcIncomeTaxes();
-			System.out.println("Incone Taxes: "+String.format("%.0f", incomeTaxes));
+			System.out.println("Incone Taxes: "+decimal.format(incomeTaxes));
+			
 			double resultrsonalncomeTax=esalary.calcPersonalIncomeTax();
-					DecimalFormat decimal=new DecimalFormat("#,###");
 			System.out.println("Personal Income Tax: "+decimal.format(resultrsonalncomeTax));
 			
-			
+			double resultRF=esalary.calcRealField();
+			System.out.println("Real Field: "+decimal.format(resultRF));
 		} catch (NumberFormatException | IOException e) {
 			System.out.println("Infor: " + e.getMessage());
 		}
