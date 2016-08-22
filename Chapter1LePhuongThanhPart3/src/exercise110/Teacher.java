@@ -4,6 +4,7 @@ public class Teacher extends Human {
 	private String classLeader;
 	private double coefficientsSalary;
 	private double allowance;
+	final double salary=1260000;
 	public String getClassLeader() {
 		return classLeader;
 	}
@@ -27,7 +28,7 @@ public class Teacher extends Human {
 	}
 	public Teacher(String name, String birthday, String address, String phone,
 			String classLeader, double coefficientsSalary, double allowance) {
-		super();
+		super(name, birthday, address, phone);
 		this.classLeader = classLeader;
 		this.coefficientsSalary = coefficientsSalary;
 		this.allowance = allowance;
