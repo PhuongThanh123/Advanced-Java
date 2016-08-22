@@ -4,7 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 19/08/2016 
+ * Version: 1.0 
+ * main class
+ *
+ */
 public class MainClass110ManageInformation {
 
 	public static void main(String[] args) throws IOException {
@@ -33,7 +39,8 @@ public class MainClass110ManageInformation {
 
 				System.out.println("Enter Phone: ");
 				String phone = input.readLine();
-				System.out.println("Seclect Teacher or Student: \n1: Teacher \n2: Student");
+				System.out
+						.println("Seclect Teacher or Student: \n1: Teacher \n2: Student");
 				int number = Integer.parseInt(input.readLine());
 				switch (number) {
 				case 1:
@@ -56,9 +63,6 @@ public class MainClass110ManageInformation {
 						System.out.println("Output: "
 								+ arrayListTeacher.get(i).toString());
 					}
-					//managementTeacherStudent.setArrayListTes(arrayListTeacher);
-					//System.out.println("Agv: " + student.avgMarkStudent());
-					// add code
 					break;
 				case 2:
 					System.out.println("-------ADD infor of Student--------");
@@ -81,7 +85,8 @@ public class MainClass110ManageInformation {
 					}
 
 					managementTeacherStudent.setArrayListStu(arrayListStudent);
-					System.out.println("Agv: " +managementTeacherStudent.avgMarkStudent());
+					System.out.println("Agv: "
+							+ managementTeacherStudent.avgMarkStudent());
 					break;
 				default:
 					System.out.println("Wrong select!");
