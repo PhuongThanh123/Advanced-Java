@@ -1,6 +1,7 @@
 package Exercise12;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Exercise17ManagementCD {
 	private String idCD;
@@ -62,15 +63,20 @@ public class Exercise17ManagementCD {
 		}
 		System.out.println("Done!");
 	}
-	@SuppressWarnings("unchecked")
+	
+	
 	public double addDetailsCD(){
-		@SuppressWarnings("rawtypes")
-		ArrayList arrayList=new ArrayList();
+		
+		List<Object> arrayList=new ArrayList<Object>();
 		arrayList.add(idCD);
 		arrayList.add(nameCD);
 		arrayList.add(singer);
 		arrayList.add(numberSong);
 		arrayList.add(price);
+		 
+		for(int i=0;i<arrayList.size();i++){
+			System.out.println(arrayList[i]);
+		}
 		return 1;
 	}
 
