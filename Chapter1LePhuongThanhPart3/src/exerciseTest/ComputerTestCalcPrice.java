@@ -5,7 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import exercise19.Computer;
-
+/* Author: Le Phuong Thanh
+* Date: 19/08/2016
+* Version: 1.0
+* Unit Test for handling of ComputerTest CalcPrice
+*/
 public class ComputerTestCalcPrice {
 Computer computer;
 	@Test

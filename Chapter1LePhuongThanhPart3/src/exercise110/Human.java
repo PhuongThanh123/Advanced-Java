@@ -1,5 +1,11 @@
 package exercise110;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 19/08/2016
+ * Version: 1.0
+ * Create class human
+ *
+ */
 public class Human {
 	private String name;
 	private String birthday;

@@ -1,7 +1,13 @@
 package exercise110;
 
 import java.util.ArrayList;
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 19/08/2016 
+ * Version: 1.0 
+ * create class Management Teacher and Student
+ *
+ */
 public class ManagementTeacherStudent {
 	private ArrayList<Teacher> arrayListTes;
 	private ArrayList<Student> arrayListStu;

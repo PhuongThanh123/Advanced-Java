@@ -1,5 +1,12 @@
 package exercise110;
 
+/**
+ * Author: Le Phuong Thanh
+ * Date: 19/08/2016
+ * Version: 1.0
+ * Create class Student
+ *
+ */
 public class Student extends Human {
 	private String nameClass;
 	private double markI;
