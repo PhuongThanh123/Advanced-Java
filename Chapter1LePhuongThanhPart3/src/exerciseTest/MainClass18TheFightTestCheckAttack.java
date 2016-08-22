@@ -1,9 +1,19 @@
-package exercise;
+package exerciseTest;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import exercise18.Infantryman;
+import exercise18.MainClass18TheFight;
+import exercise18.Trooper;
+/**
+ * Author: Le Phuong Thanh
+ * Date: 19/08/2016
+ * Version: 1.0
+ * Unit Test for handling of MainClass18TheFightTest about CheckAttack 
+ *
+ */
 public class MainClass18TheFightTestCheckAttack {
 	Infantryman im;
 	Trooper tr;

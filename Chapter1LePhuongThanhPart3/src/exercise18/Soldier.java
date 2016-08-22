@@ -1,4 +1,4 @@
-package exercise;
+package exercise18;
 
 public class Soldier {
 	
@@ -32,6 +32,12 @@ public class Soldier {
 		this.power = power;
 		this.weapon = weapon;
 	}
+	/**
+	 * Function decrease power 1
+	 * Input: 0
+	 * Output: return power after decrease 1
+	 * @return
+	 */
 	public int fight(){
 		int result=power-1;
 		return result;

@@ -1,13 +1,23 @@
-package exercise;
-
+package exercise18;
+/**
+ * Author: Le Phuong Thanh
+ * Date: 19/08/2016
+ * Version: 1.0
+ * Class Infantryman
+ *
+ */
 public class Infantryman extends Soldier {
 	
 	public Infantryman() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Infantryman(String name,int power,String weapon){
 		super(name, power, weapon);
 	}
+	/**
+	 * Function down power -2;
+	 * output: return power after down
+	 */
 	@Override
 	public int fight() {
 		this.power -=2;

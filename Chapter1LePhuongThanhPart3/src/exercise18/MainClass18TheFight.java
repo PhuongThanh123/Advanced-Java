@@ -1,9 +1,15 @@
-package exercise;
+package exercise18;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 19/08/2016
+ * Version: 1.0
+ * main class
+ *
+ */
 public class MainClass18TheFight {
 
 	public static void main(String[] args) {
