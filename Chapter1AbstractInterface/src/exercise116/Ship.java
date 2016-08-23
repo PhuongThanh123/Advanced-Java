@@ -7,16 +7,16 @@ public class Ship extends Transport implements IMoving, IUsingFuel{
 	private int speedStraight;
 	private String typeOfFuel;
 	private double weigth;
-	@Override
+	
 	public double calUsingFuel() {
 		double resutl=0;
-		resutl=this.distance/(usedFuel-fuelForStarup);
+		resutl=distance/(usedFuel-fuelForStarup);
 		return resutl;
 	}
-	@Override
+	
 	public double calSpeed() {
 		double result=0;
-		result=this.distance/this.time+speedStraight-speedReverse;
+		result=distance/time+speedStraight-speedReverse;
 		return result;
 	}
 	public int getCapacity() {
@@ -56,10 +56,12 @@ public class Ship extends Transport implements IMoving, IUsingFuel{
 		this.weigth = weigth;
 	}
 	
+	
 	public Ship(String color, String manufactory, String numberID,
-			String owner, int capacity, double fuelForStarup, int speedReverse,
+			String owner, double distance, double time, double usedFuel,
+			int capacity, double fuelForStarup, int speedReverse,
 			int speedStraight, String typeOfFuel, double weigth) {
-		super();
+		super(color, manufactory, numberID, owner, distance, time, usedFuel);
 		this.capacity = capacity;
 		this.fuelForStarup = fuelForStarup;
 		this.speedReverse = speedReverse;
@@ -67,9 +69,11 @@ public class Ship extends Transport implements IMoving, IUsingFuel{
 		this.typeOfFuel = typeOfFuel;
 		this.weigth = weigth;
 	}
+
 	public Ship() {
 		super();
 	}
+
 	@Override
 	public String toString() {
 		String s;

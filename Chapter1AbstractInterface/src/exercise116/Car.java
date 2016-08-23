@@ -3,16 +3,17 @@ package exercise116;
 public class Car extends Transport implements IMoving,IUsingFuel{
 	private String gear;
 	private String model;
-	@Override
+
 	public double calUsingFuel() {
 		double result=0;
-		result=this.distance/this.usedFuel;
+		result=distance/usedFuel;
 		return result;
 	}
-	@Override
+	
 	public double calSpeed() {
 		double result=0;
-		result=this.distance/this.time;
+		result=distance/time;
+		System.out.println("kq: "+result);
 		return result;
 	}
 
@@ -31,26 +32,23 @@ public class Car extends Transport implements IMoving,IUsingFuel{
 	public void setModel(String model) {
 		this.model = model;
 	}
-	
-	
-	
+		
 
 	
 	public Car(String color, String manufactory, String numberID, String owner,
-			double distance, double time, double usedFuel) {
-		super();
-	}
-	public Car(String color, String manufactory, String numberID, String owner,
 			double distance, double time, double usedFuel, String gear,
 			String model) {
-		super();
+		super(color,manufactory,numberID,owner,distance,time,usedFuel);
 		this.gear = gear;
 		this.model = model;
+	}
+	public Car() {
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		String s;
-		s=super.toString()+"\nSpeed: "+this.calSpeed()+"\nUsing Fuel: "+calUsingFuel();
+		s=super.toString()+"\nGear: "+gear+"\nModel: "+model;
 		return s;
 	}
 	
