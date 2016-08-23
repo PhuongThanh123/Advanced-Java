@@ -40,7 +40,7 @@ public class MainClassBook {
 			String publishingCompany = input.readLine();
 
 			System.out.println("======Select Book=======");
-			System.out.println("Choose 1-TextBook 2-Reference Book");
+			System.out.println("Choose \n1-TextBook \n2-Reference Book");
 			int number = Integer.parseInt(input.readLine());
 
 			switch (number) {
@@ -52,16 +52,18 @@ public class MainClassBook {
 				textBook = new TextBook(idBook, name, date, price, quantity,
 						publishingCompany, state);
 				arrayListtestBook.add(textBook);
+				
 				for (int i = 0; i < arrayListtestBook.size(); i++) {
 					System.out.println("Output: "
 							+ arrayListtestBook.get(i).toString());
 				}
 				manageBook.setArrayListTesx(arrayListtestBook);
+				
 				if (state) {
-					System.out.println("Sum price of TextBook New"
+					System.out.println("Sum price of TextBook New: "
 							+ manageBook.sumTextBookNew());
 				} else {
-					System.out.println("Sum price of TextBook Old"
+					System.out.println("Sum price of TextBook Old: "
 							+ manageBook.sumTextBookOld());
 				}
 
@@ -74,11 +76,13 @@ public class MainClassBook {
 				referenceBook = new ReferenceBook(idBook, name, date, price,
 						quantity, publishingCompany, tax);
 				arrayListReferenceBooks.add(referenceBook);
+				
 				for (int i = 0; i < arrayListReferenceBooks.size(); i++) {
 					System.out.println("Output: "
 							+ arrayListReferenceBooks.get(i).toString());
 				}
 				manageBook.setArrayListRefe(arrayListReferenceBooks);
+				
 				System.out.println("Avg price of Reference: "
 						+ manageBook.avgReferenceBook());
 			default:

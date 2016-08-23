@@ -75,7 +75,7 @@ public class Exercise17ManagementCD {
 		arrayList.add(price);
 		 
 		for(int i=0;i<arrayList.size();i++){
-			System.out.println(arrayList[i]);
+			//System.out.println(arrayList[i]);
 		}
 		return 1;
 	}
