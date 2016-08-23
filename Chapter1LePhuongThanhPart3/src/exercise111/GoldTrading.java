@@ -1,5 +1,7 @@
 package exercise111;
 
+import java.util.Date;
+
 public class GoldTrading extends Transaction {
 	private String typeGold;
 
@@ -11,14 +13,13 @@ public class GoldTrading extends Transaction {
 		this.typeGold = typeGold;
 	}
 
-	public GoldTrading(String idTransaction, String dateTransaction,
-			double price, double quantity, String typeGold) {
+	
+	public GoldTrading(String idTransaction, Date dateTransaction, double price, double quantity, String typeGold) {
 		super(idTransaction, dateTransaction, price, quantity);
 		this.typeGold = typeGold;
 	}
 
-	public GoldTrading(String idTransaction, String dateTransaction,
-			double price, double quantity) {
+	public GoldTrading(String idTransaction, Date dateTransaction, double price, double quantity) {
 		super(idTransaction, dateTransaction, price, quantity);
 	}
 
