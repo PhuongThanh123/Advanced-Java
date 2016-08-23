@@ -18,9 +18,10 @@ public class MainClassTransport {
 
 		ArrayList<Car> arrayListCar = new ArrayList<Car>();
 		ArrayList<Ship> arrayListShip = new ArrayList<Ship>();
+		System.out.println("======TRANSPORT=======");
 		boolean flag = true;
 		while (flag) {
-			System.out.println("======TRANSPORT=======");
+			
 			System.out.println("Enter distance: ");
 			double distance = Double.parseDouble(input.readLine());
 
@@ -62,8 +63,8 @@ public class MainClassTransport {
 				}
 				
 				mangeShipCar.setArrayListCa(arrayListCar);
-				System.out.println("Speed of Car: " + car.calSpeed());
-				System.out.println("Used of fuel: " + car.calUsingFuel());
+				System.out.println("Speed of Car: " + String.format("%f",car.calSpeed()));
+				System.out.println("Used of fuel: " + String.format("%f",car.calUsingFuel()));
 				break;
 			case 2:
 				System.out.println("----------------Ship--------------");
@@ -93,8 +94,8 @@ public class MainClassTransport {
 							+ arrayListShip.get(i).toString());
 				}
 				mangeShipCar.setArrayListShi(arrayListShip);
-				System.out.println("Speed of Ship: " + ship.calSpeed());
-				System.out.println("Used fuel of Ship: " + ship.calUsingFuel());
+				System.out.println("Speed of Ship: " + String.format("f%",ship.calSpeed()));
+				System.out.println("Used fuel of Ship: " + String.format("f%",ship.calUsingFuel()));
 			default:
 				System.out.println("Wrong select!");
 				break;

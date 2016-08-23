@@ -13,7 +13,6 @@ public class Car extends Transport implements IMoving,IUsingFuel{
 	public double calSpeed() {
 		double result=0;
 		result=distance/time;
-		System.out.println("kq: "+result);
 		return result;
 	}
 
