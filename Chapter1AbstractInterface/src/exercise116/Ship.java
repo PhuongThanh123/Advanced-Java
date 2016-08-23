@@ -55,9 +55,11 @@ public class Ship extends Transport implements IMoving, IUsingFuel{
 	public void setWeigth(double weigth) {
 		this.weigth = weigth;
 	}
-	public Ship(String color, String manufactory, String numberID, String owner, int capacity, double fuelForStarup,
-			int speedReverse, int speedStraight, String typeOfFuel, double weigth) {
-		super(color, manufactory, numberID, owner);
+	
+	public Ship(String color, String manufactory, String numberID,
+			String owner, int capacity, double fuelForStarup, int speedReverse,
+			int speedStraight, String typeOfFuel, double weigth) {
+		super();
 		this.capacity = capacity;
 		this.fuelForStarup = fuelForStarup;
 		this.speedReverse = speedReverse;

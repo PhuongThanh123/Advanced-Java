@@ -1,10 +1,13 @@
 package exercise116;
 
-public abstract class Transport extends Moving {
+public abstract class Transport  {
 	protected String color;
 	protected String manufactory;
 	protected String numberID;
 	protected String owner;
+	protected double distance;
+	protected double time;
+	protected double usedFuel;
 	public String getColor() {
 		return color;
 	}
@@ -29,17 +32,7 @@ public abstract class Transport extends Moving {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	public Transport(String color, String manufactory, String numberID,
-			String owner) {
-		super();
-		this.color = color;
-		this.manufactory = manufactory;
-		this.numberID = numberID;
-		this.owner = owner;
-	}
-	public Transport() {
-		super();
-	}
+	
 	@Override
 	public String toString() {
 		String s;

@@ -31,17 +31,22 @@ public class Car extends Transport implements IMoving,IUsingFuel{
 	public void setModel(String model) {
 		this.model = model;
 	}
+	
+	
+	
 
-	public Car(String color, String manufactory, String numberID, String owner, String gear, String model) {
-		super(color, manufactory, numberID, owner);
+	
+	public Car(String color, String manufactory, String numberID, String owner,
+			double distance, double time, double usedFuel) {
+		super();
+	}
+	public Car(String color, String manufactory, String numberID, String owner,
+			double distance, double time, double usedFuel, String gear,
+			String model) {
+		super();
 		this.gear = gear;
 		this.model = model;
 	}
-
-	public Car() {
-		super();
-	}
-
 	@Override
 	public String toString() {
 		String s;
