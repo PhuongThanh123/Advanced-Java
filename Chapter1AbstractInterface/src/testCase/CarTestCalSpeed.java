@@ -1,8 +1,10 @@
-package exercise116;
+package testCase;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import exercise116.Car;
 /** Author: Le Phuong Thanh
 * Date: 23/08/2016
 * Version: 1.0

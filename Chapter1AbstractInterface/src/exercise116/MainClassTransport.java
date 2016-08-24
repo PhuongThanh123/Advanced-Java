@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class MainClassTransport {
 
-	public static void main(String[] args) throws NumberFormatException,
-			IOException {
+	public static void main(String[] args)  {
+		try{
 		BufferedReader input = new BufferedReader(new InputStreamReader(
 				System.in));
 
@@ -110,6 +110,10 @@ public class MainClassTransport {
 				continue;
 			} else
 				break;
+		}
+		}catch(NullPointerException|IOException e){
+			System.out.println("Error: "+e.getMessage());
+			
 		}
 
 	}

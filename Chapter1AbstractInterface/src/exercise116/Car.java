@@ -14,8 +14,11 @@ public class Car extends Transport implements IMoving,IUsingFuel{
  * Output: return result
  */
 	public double calUsingFuel() {
-		double result=0;
-		result=distance/usedFuel;
+		double result = 0;
+		if (usedFuel == 0)
+			return 0;
+		else
+			result = distance / usedFuel;
 		return result;
 	}
 	/**
@@ -23,8 +26,11 @@ public class Car extends Transport implements IMoving,IUsingFuel{
 	 * Output: return result
 	 */	
 	public double calSpeed() {
-		double result=0;
-		result=distance/time;
+		double result = 0;
+		if (time == 0)
+			return 0;
+		else
+			result = distance / time;
 		return result;
 	}
 
