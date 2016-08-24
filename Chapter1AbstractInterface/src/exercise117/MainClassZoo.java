@@ -71,6 +71,7 @@ public class MainClassZoo {
 				boa.moult();
 				boa.swim();
 				System.out.println("-----------------------------");
+				break;
 			default:
 				System.out.println("Wrong select!");
 				break;

@@ -57,7 +57,7 @@ public class Computer {
 	@Override
 	public String toString() {
 		
-		return "ID: "+id+" Price: "+price+" Munufacturer: "+manufacturer+" Quantity: "+quantity;
+		return "\nID: "+id+"\nPrice: "+price+"\nMunufacturer: "+manufacturer+"\nQuantity: "+quantity;
 	}
 	
 	

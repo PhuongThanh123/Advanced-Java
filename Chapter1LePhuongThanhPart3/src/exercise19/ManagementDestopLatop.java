@@ -45,6 +45,8 @@ public class ManagementDestopLatop {
 
 	public double sumPriceDestop() {
 		double sum = 0;
+		if(destop==null)
+			return 0;
 		for (int i = 0; i < destop.size(); i++) {
 			sum = sum + destop.get(i).getPrice();
 		}
@@ -58,10 +60,33 @@ public class ManagementDestopLatop {
 
 	public double sumPriceLaptop() {
 		double sum = 0;
+		if(laptops==null)
+			return 0;
 		for (int i = 0; i < laptops.size(); i++) {
 			sum += sum + laptops.get(i).getPrice();
 		}
 		return sum;
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		if (destop.size() != 0) {
+			System.out.println("------List of DesTop-------\n");
+			for (int i = 0; i < destop.size(); i++) {
+				s += destop.get(i).toString();
+				s += "-------------------------\n";
+			}
+		}
+		if (laptops.size() != 0) {
+			s = "------List of Laptop-----------\n";
+			for (int i = 0; i < laptops.size(); i++) {
+				s += laptops.get(i).toString();
+				s += "----------------------------\n";
+			}
+		}
+		return s;
+
 	}
 
 }

@@ -31,7 +31,7 @@ public class Destop extends Computer{
 	}
 	@Override
 	public String toString() {
-		return super.toString()+" CPU: "+cpu+" RAM: "+ram;
+		return super.toString()+"\nCPU: "+cpu+"\nRAM: "+ram;
 	}
 	
 

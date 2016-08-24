@@ -49,7 +49,7 @@ public class Laptop extends Computer {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Weight: " + weight + "Time Pin: " + timePin + " Size Screen: " + sizescreen;
+		return super.toString() + "\nWeight: " + weight + "\nTime Pin: " + timePin + "\nSize Screen: " + sizescreen;
 	}
 
 }
