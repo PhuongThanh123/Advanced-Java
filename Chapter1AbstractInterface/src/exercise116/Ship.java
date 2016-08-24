@@ -15,13 +15,17 @@ public class Ship extends Transport implements IMoving, IUsingFuel{
 	private double weigth;
 	
 	public double calUsingFuel() {
-		double resutl=0;
-		resutl=distance/(usedFuel-fuelForStarup);
+		double resutl = 0;
+		if ((usedFuel - fuelForStarup) == 0)
+			return 0;
+		resutl = distance / (usedFuel - fuelForStarup);
 		return resutl;
 	}
 	
 	public double calSpeed() {
 		double result=0;
+		if(time==0)
+			return 0;
 		result=distance/time+speedStraight-speedReverse;
 		return result;
 	}
