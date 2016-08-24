@@ -37,7 +37,7 @@ public class MainClassManageSalaryStaff {
 		while (flag) {
 
 			System.out
-					.println("Choose: \n 1: Businuess Staff \n2: Production Staff");
+					.println("Choose: \n1: Businuess Staff \n2: Production Staff");
 			int number = Integer.parseInt(input.readLine());
 
 			switch (number) {
