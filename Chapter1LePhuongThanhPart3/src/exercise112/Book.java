@@ -1,5 +1,11 @@
 package exercise112;
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 19/08/2016 
+ * Version: 1.0 
+ * Description: Create class Transaction
+ *
+ */
 public class Book {
 	private String idBook;
 	private String name;
@@ -56,6 +62,11 @@ public class Book {
 	public Book() {
 		super();
 	}
+	/**
+	 * Method calculate price of book
+	 * Output: return result
+	 * @return
+	 */
 	public double sumMoney(){
 		double result=0;
 		result=price*quantity;

@@ -4,7 +4,7 @@ package exercise110;
  * Author: Le Phuong Thanh
  * Date: 19/08/2016
  * Version: 1.0
- * Create class Student
+ * Description: Create class Student
  *
  */
 public class Student extends Human {
@@ -41,8 +41,7 @@ public class Student extends Human {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString()+"Name Class: "+nameClass+"Mark I: "+markI+" Mark II: "+markII;
+		return super.toString()+"\nName Class: "+nameClass+"\nMark I: "+markI+"\nMark II: "+markII;
 	}
 	
 	

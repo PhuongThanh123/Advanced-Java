@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Author: Le Phuong Thanh 
  * Date: 19/08/2016 
  * Version: 1.0 
- * main class
+ * Description: main class
  *
  */
 public class MainClass110ManageInformation {
@@ -17,6 +17,7 @@ public class MainClass110ManageInformation {
 		try {
 			BufferedReader input = new BufferedReader(new InputStreamReader(
 					System.in));
+			
 			Teacher teacher = new Teacher();
 			Student student = new Student();
 			ManagementTeacherStudent managementTeacherStudent = new ManagementTeacherStudent();
@@ -44,6 +45,7 @@ public class MainClass110ManageInformation {
 				int number = Integer.parseInt(input.readLine());
 				switch (number) {
 				case 1:
+					//Add information of Teacher
 					System.out.println("-------ADD infor of Teacher--------");
 					System.out.println("Enter Class Leader: ");
 					String classLeader = input.readLine();
@@ -58,13 +60,11 @@ public class MainClass110ManageInformation {
 					teacher = new Teacher(name, birthday, address, phone,
 							classLeader, coefficientsSalary, allowance);
 					arrayListTeacher.add(teacher);
-
-					for (int i = 0; i < arrayListTeacher.size(); i++) {
-						System.out.println("Output: "
-								+ arrayListTeacher.get(i).toString());
-					}
+					printfArrayList(managementTeacherStudent, arrayListTeacher, arrayListStudent);
+					
 					break;
 				case 2:
+					//Add information of student
 					System.out.println("-------ADD infor of Student--------");
 					System.out.println("Enter Name Class: ");
 					String nameClass = input.readLine();
@@ -78,15 +78,9 @@ public class MainClass110ManageInformation {
 					student = new Student(name, birthday, address, phone,
 							nameClass, markI, markII);
 					arrayListStudent.add(student);
+					printfArrayList(managementTeacherStudent, arrayListTeacher, arrayListStudent);
 
-					for (int i = 0; i < arrayListStudent.size(); i++) {
-						System.out.println("Output: "
-								+ arrayListStudent.get(i).toString());
-					}
-
-					managementTeacherStudent.setArrayListStu(arrayListStudent);
-					System.out.println("Agv: "
-							+ managementTeacherStudent.avgMarkStudent());
+										
 					break;
 				default:
 					System.out.println("Wrong select!");
@@ -105,6 +99,25 @@ public class MainClass110ManageInformation {
 		}
 
 	}
+	/**
+	 * Method print list Teacher and student
+	 * Output: return list teacher and student
+	 * @param managementTeacherStudent
+	 * @param arrayListTeacher
+	 * @param arrayListStudent
+	 */
+	public static void printfArrayList(ManagementTeacherStudent managementTeacherStudent,ArrayList<Teacher> arrayListTeacher,ArrayList<Student> arrayListStudent){
+		
+		managementTeacherStudent.setArrayListStu(arrayListStudent);
+		managementTeacherStudent.setArrayListTes(arrayListTeacher);
+		System.out.println(managementTeacherStudent.toString());
+	}
+	/**
+	 * Method check input Yes or No, if true is return true else return false
+	 * output return value is true or false
+	 * @return
+	 * @throws IOException
+	 */
 
 	public static boolean selectYN() throws IOException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(

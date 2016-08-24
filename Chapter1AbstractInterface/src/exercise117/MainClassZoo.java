@@ -82,6 +82,12 @@ public class MainClassZoo {
 				break;
 		}
 	}
+	/**
+	 * Method check input Yes or No, if true is return true else return false
+	 * output return value is true or false
+	 * @return
+	 * @throws IOException
+	 */
 
 	public static boolean selectYN() throws IOException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));

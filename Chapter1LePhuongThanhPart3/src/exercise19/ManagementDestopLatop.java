@@ -70,19 +70,19 @@ public class ManagementDestopLatop {
 
 	@Override
 	public String toString() {
-		String s = "";
+		String s ="";
 		if (destop.size() != 0) {
 			System.out.println("------List of DesTop-------\n");
 			for (int i = 0; i < destop.size(); i++) {
 				s += destop.get(i).toString();
-				s += "-------------------------\n";
+				s += "\n-------------------------\n";
 			}
 		}
 		if (laptops.size() != 0) {
 			s = "------List of Laptop-----------\n";
 			for (int i = 0; i < laptops.size(); i++) {
 				s += laptops.get(i).toString();
-				s += "----------------------------\n";
+				s += "\n----------------------------\n";
 			}
 		}
 		return s;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Author: Le Phuong Thanh 
  * Date: 19/08/2016 
  * Version: 1.0 
- *Descriptione: create  class
+ * Description: create  class
  */
 public class MainClass19ManagementListComputer {
 
@@ -49,6 +49,7 @@ public class MainClass19ManagementListComputer {
 				int choose = Integer.parseInt(input.readLine());
 				switch (choose) {
 				case 1:
+					//add information of destop
 					System.out.println("----ADD infor Destop");
 					System.out.println("Enter CPU");
 					String cpu = input.readLine();
@@ -60,14 +61,11 @@ public class MainClass19ManagementListComputer {
 							ram);
 
 					arrayListDes.add(destop);
-					for (int i = 0; i < arrayListDes.size(); i++) {
-						System.out.println("\nOutput: "
-								+ arrayListDes.get(i).toString());
-					}
-					
-										printfArrayDestop(destopLatop, arrayListDes,arrayListLa);
+
+					printfArrayDestop(destopLatop, arrayListDes, arrayListLa);
 					break;
 				case 2:
+					//add information of laptop
 					System.out.println("----ADD infor Laptop");
 					System.out.println("Enter weight: ");
 					double weight = Double.parseDouble(input.readLine());
@@ -84,13 +82,8 @@ public class MainClass19ManagementListComputer {
 					laptop = new Laptop(id, price, manufacturer, quantity,
 							weight, timePin, sizescreen);
 					arrayListLa.add(laptop);
-					for (int i = 0; i < arrayListLa.size(); i++) {
-						System.out.println("Output: "
-								+ arrayListLa.get(i).toString());
-					}
-
 					destopLatop.setLaptops(arrayListLa);
-					
+					printfArrayDestop(destopLatop, arrayListDes,arrayListLa);
 
 					break;
 				default:
@@ -110,6 +103,13 @@ public class MainClass19ManagementListComputer {
 		}
 
 	}
+	/**
+	 * Method print List of latop and destop; print Sum price of Destop; print price of Laptop
+	 * return list of laptop, destop and sum price of destop, laptop
+	 * @param destopLatop
+	 * @param arrayListDes
+	 * @param arrayListLa
+	 */
 	public static void printfArrayDestop(ManagementDestopLatop destopLatop,ArrayList<Destop> arrayListDes,ArrayList<Laptop> arrayListLa ){
 		destopLatop.setDestop(arrayListDes);
 		destopLatop.setLaptops(arrayListLa);
@@ -120,7 +120,12 @@ public class MainClass19ManagementListComputer {
 				+ destopLatop.sumPriceLaptop());
 		System.out.println();
 	}
-	
+	/**
+	 * Method check input Yes or No, if true is return true else return false
+	 * output return value is true or false
+	 * @return
+	 * @throws IOException
+	 */
 	public static boolean selectYN() throws IOException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(
 				System.in));

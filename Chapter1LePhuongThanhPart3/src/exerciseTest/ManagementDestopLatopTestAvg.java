@@ -7,10 +7,10 @@ import org.junit.Test;
 import exercise110.ManagementTeacherStudent;
 import exercise110.Student;
 
-/* Author: Le Phuong Thanh
+/** Author: Le Phuong Thanh
 * Date: 19/08/2016
 * Version: 1.0
-* Unit Test for handling of ManagementDestopLatop Test Avg
+* Description: Unit Test for handling of ManagementDestopLatop Test Avg
 */
 public class ManagementDestopLatopTestAvg {
 ManagementTeacherStudent mdl;
