@@ -1,5 +1,11 @@
 package exercise117;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 24/08/2016
+ * Version: 1.0
+ * Create class Boa
+ *
+ */
 public class Boa extends Animal implements Iswimiming, IMoult,IBurrow{
 
 	public void burrow() {

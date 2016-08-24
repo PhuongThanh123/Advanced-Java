@@ -1,5 +1,11 @@
 package exercise117;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 24/08/2016
+ * Version: 1.0
+ * Create class Fish
+ *
+ */
 public class Fish extends Animal implements Iswimiming, INonMoult, IWater{
 
 	public void water() {

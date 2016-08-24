@@ -3,7 +3,13 @@ package exercise115;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 23/08/2016
+ * Version: 1.0
+ * Create MainClass
+ *
+ */
 public class MainClassIntrument {
 	public static void main(String agrs[]) throws IOException{
 		BufferedReader input=new BufferedReader(new InputStreamReader(System.in));

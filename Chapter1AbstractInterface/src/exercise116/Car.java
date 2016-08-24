@@ -1,15 +1,27 @@
 package exercise116;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 23/08/2016
+ * Version: 1.0
+ * Create class Car
+ *
+ */
 public class Car extends Transport implements IMoving,IUsingFuel{
 	private String gear;
 	private String model;
-
+/**
+ * Function calculation Using Fuel
+ * Output: return result
+ */
 	public double calUsingFuel() {
 		double result=0;
 		result=distance/usedFuel;
 		return result;
 	}
-	
+	/**
+	 * Function calculation speed
+	 * Output: return result
+	 */	
 	public double calSpeed() {
 		double result=0;
 		result=distance/time;

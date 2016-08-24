@@ -1,7 +1,13 @@
 package exercise116;
 
 import java.util.ArrayList;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 23/08/2016
+ * Version: 1.0
+ * Create class ManageShipCar
+ *
+ */
 public class MangeShipCar {
 	private ArrayList<Car> arrayListCa;
 	private ArrayList<Ship> arrayListShi;

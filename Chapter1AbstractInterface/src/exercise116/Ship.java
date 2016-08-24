@@ -1,5 +1,11 @@
 package exercise116;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 23/08/2016
+ * Version: 1.0
+ * Create class Ship
+ *
+ */
 public class Ship extends Transport implements IMoving, IUsingFuel{
 	private int capacity;
 	private double fuelForStarup;

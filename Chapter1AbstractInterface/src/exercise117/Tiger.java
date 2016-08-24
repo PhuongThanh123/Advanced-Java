@@ -1,5 +1,11 @@
 package exercise117;
-
+/**
+ * Author: Le Phuong Thanh
+ * Date: 23/08/2016
+ * Version: 1.0
+ * Create class Tiger
+ *
+ */
 public class Tiger extends Animal implements Iswimiming, IRunning,INonMoult, IBurrow  {
 
 	public void burrow() {

@@ -1,6 +1,10 @@
 package exercise116;
 
-public  class Transport  {
+/**
+ * Author: Le Phuong Thanh Date: 23/08/2016 Version: 1.0 Create class transport
+ *
+ */
+public class Transport {
 	protected String color;
 	protected String manufactory;
 	protected String numberID;
@@ -8,8 +12,7 @@ public  class Transport  {
 	protected double distance;
 	protected double time;
 	protected double usedFuel;
-	
-	
+
 	public String getColor() {
 		return color;
 	}
@@ -77,19 +80,17 @@ public  class Transport  {
 		this.time = time;
 		this.usedFuel = usedFuel;
 	}
-	
+
 	public Transport() {
 		super();
 	}
 
-	
 	@Override
 	public String toString() {
 		String s;
-		s="Number ID: "+numberID+"\nOwer: "+owner+"\nColor: "+color+"\nManufactory: "+manufactory;
+		s = "Number ID: " + numberID + "\nOwer: " + owner + "\nColor: " + color
+				+ "\nManufactory: " + manufactory;
 		return s;
 	}
-	
-	
-	
+
 }
