@@ -1,5 +1,13 @@
-package Exercise;
+package Exercise116;
 
+
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create Class Salary
+ *
+ */
 public class Exercise16Salary {
 
 	private double coefficients;

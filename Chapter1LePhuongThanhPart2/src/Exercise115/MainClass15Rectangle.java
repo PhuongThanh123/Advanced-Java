@@ -1,9 +1,18 @@
-package Exercise;
+package Exercise115;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import Exercise113.Calculate13DistancePoint;
+import Exercise113.Exercise13Point;
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create main class of Rectangle
+ *
+ */
 public class MainClass15Rectangle {
 
 	public static void main(String[] args) {

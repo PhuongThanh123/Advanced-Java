@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Exercise.Exercise14Circle;
+import Exercise114.Exercise14Circle;
 /**
  * Author: Le Phuong Thanh
  * Date: 19/08/2016

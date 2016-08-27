@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Exercise.Exercise16Salary;
+import Exercise116.Exercise16Salary;
 
 public class Exercise16SalaryTestSalary {
 Exercise16Salary es;

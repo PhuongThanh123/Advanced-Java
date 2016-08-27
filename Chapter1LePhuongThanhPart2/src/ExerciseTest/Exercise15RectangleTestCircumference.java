@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Exercise.Exercise15Rectangle;
+import Exercise115.Exercise15Rectangle;
 /**
  * Author: Le Phuong Thanh
  * Date: 19/08/2016

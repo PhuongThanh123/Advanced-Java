@@ -1,10 +1,16 @@
-package Exercise;
+package Exercise116;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create MainClass of salary
+ *
+ */
 public class MainClass16Salary {
 
 	public static void main(String[] args) {

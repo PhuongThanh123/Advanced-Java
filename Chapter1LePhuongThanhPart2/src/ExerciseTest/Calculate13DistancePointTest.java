@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Exercise.Calculate13DistancePoint;
-import Exercise.Exercise13Point;
+import Exercise113.Calculate13DistancePoint;
+import Exercise113.Exercise13Point;
 /**
  * Author: Le Phuong Thanh
  * Date: 19/08/2016

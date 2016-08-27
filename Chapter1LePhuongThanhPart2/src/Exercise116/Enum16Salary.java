@@ -1,5 +1,11 @@
-package Exercise;
-
+package Exercise116;
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create Enum salary
+ *
+ */
 public enum Enum16Salary {
 	  LEVEL1(0,5000000,0.05,250000),
 	  LEVEL2(50000000,10000000,0.1,500000),

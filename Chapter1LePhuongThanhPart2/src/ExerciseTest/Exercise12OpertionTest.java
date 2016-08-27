@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Exercise.Exercise12Opertion;
+import Exercise112.Exercise12Opertion;
 /**
  * Author: Le Phuong Thanh
  * Date: 19/08/2016

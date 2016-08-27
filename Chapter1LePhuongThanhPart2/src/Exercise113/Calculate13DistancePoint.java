@@ -1,4 +1,5 @@
-package Exercise;
+package Exercise113;
+
 
 /**
  * Author: Le Phuong Thanh Date: 19/08/2016 Version: 1.0 Class calculation

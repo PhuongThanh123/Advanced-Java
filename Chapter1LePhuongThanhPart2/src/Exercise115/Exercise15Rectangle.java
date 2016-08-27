@@ -1,4 +1,4 @@
-package Exercise;
+package Exercise115;
 
 /**
  * Author: Le Phuong Thanh 

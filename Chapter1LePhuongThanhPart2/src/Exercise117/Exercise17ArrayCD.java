@@ -1,7 +1,13 @@
-package Exercise;
+package Exercise117;
 
 import java.util.ArrayList;
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create Class arrayList of CD
+ *
+ */
 public class Exercise17ArrayCD {
 	private ArrayList<Exercise17CD> arrayCD;
 
@@ -35,9 +41,6 @@ public class Exercise17ArrayCD {
 		}
 		return s;
 	}
-
-	
-	
 
 	
 	

@@ -1,6 +1,12 @@
-package Exercise;
+package Exercise117;
 
-
+/**
+ * Author: Le Phuong Thanh 
+ * Date: 27/08/2016 
+ * Version: 1.0 
+ * Create Class CD
+ *
+ */
 
 public class Exercise17CD {
 	private String idCD;
