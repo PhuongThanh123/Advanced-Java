@@ -56,7 +56,7 @@ public class OrderDetail {
 	
 	@Override
 	public String toString() {
-	String s=m_Product.toString()+"\t"+quantity+"\t"+calLineTotal()+" VND"+"\n";
+	String s=m_Product.toString()+"\t"+quantity+"\t\t"+calLineTotal()+" VND"+"\n";
 	return s;
 	}
 	

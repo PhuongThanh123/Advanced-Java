@@ -56,7 +56,7 @@ public class Card extends Information {
 
 	@Override
 	public String toString() {
-		String s="ID Card: "+this.cardID+m_Order;
+		String s="ID Card: "+this.cardID;
 		return s;
 	}
 	
