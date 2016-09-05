@@ -1,41 +1,48 @@
 package exercise113;
 
-
-
 public class Staff {
-	
+
 	private String name;
 	private double coefficientsSalary;
 	private int numberPerson;
 	private double allowance;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public double getCoefficientsSalary() {
 		return coefficientsSalary;
 	}
+
 	public void setCoefficientsSalary(double coefficientsSalary) {
 		this.coefficientsSalary = coefficientsSalary;
 	}
+
 	public int getNumberPerson() {
 		return numberPerson;
 	}
+
 	public void setNumberPerson(int numberPerson) {
 		this.numberPerson = numberPerson;
 	}
+
 	public double getAllowance() {
 		return allowance;
 	}
+
 	public void setAllowance(double allowance) {
 		this.allowance = allowance;
 	}
+
 	public Staff() {
 		super();
 	}
+
 	public Staff(String name, double coefficientsSalary, int numberPerson,
 			double allowance) {
 		super();
@@ -44,13 +51,16 @@ public class Staff {
 		this.numberPerson = numberPerson;
 		this.allowance = allowance;
 	}
-	
+
 	@Override
 	public String toString() {
 		String s;
-		s="Name: "+name+"\nCoefficients Salary:"+coefficientsSalary+"\nNumber Porson: "+numberPerson+"\nAllowance: "+allowance;
+		s = "Name: " + name + "\nCoefficients Salary:" + coefficientsSalary
+				+ "\nNumber Porson: " + numberPerson + "\nAllowance: "
+				+ allowance;
 		return s;
 	}
+
 	public double calSalary() {
 		final double salarybasic = 1260000;
 		double salary = coefficientsSalary * salarybasic + allowance;

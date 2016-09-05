@@ -3,7 +3,7 @@ package exercise113;
 import java.util.ArrayList;
 
 public class MangeStaff {
-	
+
 	private ArrayList<BusinessStaff> arrayListBusiness;
 	private ArrayList<ProductionStaff> arrayListProduction;
 
@@ -36,23 +36,23 @@ public class MangeStaff {
 		super();
 	}
 
-	public double avgBusiness(){
-		double result=0;
-		double avg=0;
-		for(int i=0;i<arrayListBusiness.size();i++){
-			result=arrayListBusiness.get(i).calcRealField()+result;
+	public double avgBusiness() {
+		double result = 0;
+		double avg = 0;
+		for (int i = 0; i < arrayListBusiness.size(); i++) {
+			result = arrayListBusiness.get(i).calcRealField() + result;
 		}
-		avg=result/arrayListBusiness.size();
+		avg = result / arrayListBusiness.size();
 		return avg;
 	}
 
-	public double avgPro(){
-		double result=0;
-		double avg=0;
-		for(int i=0;i<arrayListProduction.size();i++){
-			result=arrayListProduction.get(i).calcRealField()+result;
+	public double avgPro() {
+		double result = 0;
+		double avg = 0;
+		for (int i = 0; i < arrayListProduction.size(); i++) {
+			result = arrayListProduction.get(i).calcRealField() + result;
 		}
-		avg=result/arrayListProduction.size();
+		avg = result / arrayListProduction.size();
 		return avg;
 	}
 
