@@ -67,25 +67,12 @@ public class BusinessStaff extends Staff {
 
 
 
-	@Override
-	public double calcIncomeTaxes() {
-		return calcIncomeTaxes();
-	}
+
+	
 
 
 
-	@Override
-	public double calcPersonalIncomeTax() {
-		return calcPersonalIncomeTax();
-	}
-
-
-
-	@Override
-	public double calcRealField() {
-		return calcRealField();
-	}
-
+	
 
 
 	@Override
