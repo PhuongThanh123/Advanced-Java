@@ -4,6 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * @Author: Le Phuong Thanh 
+ * @Date: 09/09/2016 
+ * @Version: 1.0 
+ * @Create Class main handling calculator are of shape
+ *
+ */
 public class Mainclass {
 	public static void main(String agrs[]) throws NumberFormatException,
 			IOException {
