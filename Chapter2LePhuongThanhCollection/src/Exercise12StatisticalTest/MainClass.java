@@ -3,6 +3,7 @@ package Exercise12StatisticalTest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.TreeMap;
 
 public class MainClass {
 
@@ -12,7 +13,10 @@ public class MainClass {
 		System.out.println("Enter text: ");
 		String text=input.readLine();
 		
-
+		String textWord[]=text.split(" ");
+		
+		//treeMap
+		TreeMap<String, textWord> treeMapTest=new TreeMap<String, textWord>();
 	}
 
 }
