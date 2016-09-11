@@ -5,7 +5,10 @@ import java.util.List;
 
 public class ManagementPhone {
 	private List<Phone> listPhone = new ArrayList<Phone>();
-	//private Phone phone = new Phone();
+	private List<Phone> listSearch = new ArrayList<Phone>();
+	private Phone phone = new Phone();
+
+	// private Phone phone = new Phone();
 
 	public List<Phone> getListPhone() {
 		return listPhone;
@@ -27,37 +30,69 @@ public class ManagementPhone {
 	/**
 	 * @param name
 	 * @param numberPhone
-	 *            description: add new contact into Contact Phone
+	 * @description: add new contact into Contact Phone
 	 */
 	public void addContac(Phone phone) {
 		listPhone.add(phone);
 	}
 
-	public String searchContact(String name) {
-		String s = "----------Result--------\n";
+	public List<Phone> searchContact(String name) {
+		listSearch.clear();
 		if (lengthOfList() != 0) {
 			for (int i = 0; i < listPhone.size(); i++) {
-				if (listPhone.get(i).equals(name)) {
-					s += listPhone.get(i).toString() + "\n";
+				if (listPhone.get(i).getName().contains(name)) {
+					listSearch.add(listPhone.get(i));
 				}
 			}
-			return s;
+			return listSearch;
+		}
+		return null;
+	}
+
+	public Phone searchOldNumber(String oldNumber) {
+		// listSearch.clear();
+		if (lengthOfList() != 0) {
+			for (int i = 0; i < listSearch.size(); i++) {
+				if (listSearch.get(i).getNumberPhone().contains(oldNumber)) {
+					phone=new Phone(listSearch.get(i).getName(),oldNumber );
+					return phone;
+				}
+			}
 
 		}
 		return null;
-
 	}
 
-	public String deleteContact(String name) {
-		String s = "";
-		if (searchContact(name) != null) {
-			listPhone.remove(name);
-			s += "Remove " + name + " successfully";
-			System.out.println(toString());
-		} else {
-			s += "No " + name + " in Contact";
-		}
-		return s;
+	public void deleteContact(String name) {
+		if (lengthOfList() != 0) {
+			for (int i = listPhone.size() - 1; i >= 0; i--) {
+				if (listPhone.get(i).getName().contains(name)) {
+					listPhone.remove(listPhone.get(i));
+				}
+			}
+			System.out.println("Successfully!");
+			printAll();
+
+		} else
+			System.out.println("Emtry!");
+	}
+
+	public void updateNumberPhone(String newNumberPhone) {
+
+		// listSearch.get(0).setNumberPhone(newNumberPhone);
+		listSearch.get(0).setNumberPhone(newNumberPhone);
+	}
+
+	public int lengthOfListSearch() {
+		return listSearch.size();
+	}
+
+	public boolean isUpdateAll(String name) {
+		searchContact(name);
+		int num = listSearch.size();
+		if (num == 0)
+			return false;
+		return true;
 
 	}
 
@@ -65,8 +100,20 @@ public class ManagementPhone {
 		return listPhone.size();
 	}
 
-	@Override
-	public String toString() {
+	public String printSearch() {
+		return toString(listSearch);
+	}
+
+	public String printAll() {
+		return toString(listPhone);
+	}
+
+	public void printNumberPhone(String oldNumber) {
+		System.out.println("-------------hello---------");
+		System.out.println(searchOldNumber(oldNumber).toString());
+	}
+
+	public String toString(List<Phone> listPhone) {
 		String s = "----------List Contact-----------\n";
 		s += "Name\tNumberPhone\n";
 		for (int i = 0; i < listPhone.size(); i++) {

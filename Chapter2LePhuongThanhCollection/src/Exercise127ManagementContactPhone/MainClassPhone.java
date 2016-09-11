@@ -9,6 +9,7 @@ public class MainClassPhone {
 	public static void main(String[] args) throws IOException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(
 				System.in));
+		
 		ManagementPhone managementPhone = new ManagementPhone();
 		Phone phone = new Phone();
 		addNewContact(input, managementPhone, phone);
@@ -26,7 +27,7 @@ public class MainClassPhone {
 			int number = Integer.parseInt(input.readLine());
 			switch (number) {
 			case 1:
-				System.out.println(managementPhone.toString());
+				System.out.println(managementPhone.printAll());
 				break;
 			case 2:
 				addNewContact(input, managementPhone, phone);
@@ -38,14 +39,15 @@ public class MainClassPhone {
 				deleteContact(input, managementPhone, phone);
 				break;
 			case 5:
+				updateContact(input, managementPhone, phone);
 				break;
 			case 6:
 				System.out.println("Done!");
 			default:
 				System.out.println("Wrong select!");
-				
+
 				break;
-				
+
 			}
 			if (selectYN()) {
 				continue;
@@ -69,7 +71,7 @@ public class MainClassPhone {
 		phone = new Phone(name, numberPhone);
 		managementPhone.addContac(phone);
 
-		System.out.println(managementPhone.toString());
+		//System.out.println(managementPhone.toString());
 		selectMenu(input, managementPhone, phone);
 	}
 
@@ -77,25 +79,82 @@ public class MainClassPhone {
 			ManagementPhone managementPhone, Phone phone) throws IOException {
 		System.out.println("=======Search Contact========");
 
+		// System.out.println("List--------+"+managementPhone.toString());
 		System.out.println("Enter name Contact: ");
 		String name = input.readLine();
-		
-		phone=new Phone(name, "");
-		if(managementPhone.searchContact(name) == null){
+
+		if (managementPhone.searchContact(name) != null) {
+			System.out.println("---------List-------\n");
+			System.out.println(managementPhone.printSearch());
+			System.out.println("--------------");
+		} else {
+			
 			System.out.println("No result!");
-		}else{
-			System.out.println(managementPhone.searchContact(name));
+			//System.out.println(managementPhone.searchContact(name));
+
 		}
 		selectMenu(input, managementPhone, phone);
 	}
+
 	public static void deleteContact(BufferedReader input,
-			ManagementPhone managementPhone, Phone phone) throws IOException{
+			ManagementPhone managementPhone, Phone phone) throws IOException {
 		System.out.println("==========Delec Contact=========");
-		
+
 		System.out.println("Enter name Contact to detele: ");
 		String name = input.readLine();
-		System.out.println(managementPhone.deleteContact(name));
-		phone=new Phone(name, "");
+		//phone = new Phone(name, "");
+		
+		managementPhone.deleteContact(name);
+		System.out.println(managementPhone.printAll());
+		selectMenu(input, managementPhone, phone);
+	}
+	
+	public static void updateContact(BufferedReader input,
+			ManagementPhone managementPhone, Phone phone) throws IOException{
+		System.out.println("----------Update-----------");
+		
+		System.out.println("Enter name to update: ");
+		String name=input.readLine();
+		
+		if(!managementPhone.isUpdateAll(name))
+		{
+			System.out.println("Search is not result!");
+			System.out.println(managementPhone.printAll());
+		}else
+		{
+			System.out.println(managementPhone.printSearch());
+			if(managementPhone.lengthOfListSearch()==1){
+				
+				System.out.println("Enter new number: ");
+				String newNumberPhone=input.readLine();
+				
+				managementPhone.updateNumberPhone(newNumberPhone);
+			}else
+			{
+				System.out.println(managementPhone.printSearch());
+				
+				System.out.println("Enter old number: ");
+				String oldNumberPhone=input.readLine();
+				
+				if(managementPhone.searchOldNumber(oldNumberPhone)!=null){
+
+					//System.out.println(managementPhone.printNumberPhone(oldNumberPhone));
+					managementPhone.printNumberPhone(oldNumberPhone);
+					System.out.println("Enter new number: ");
+					String newNumberPhone=input.readLine();
+					
+					managementPhone.updateNumberPhone(newNumberPhone);
+					
+				
+				}else
+				{
+				
+					System.out.println(oldNumberPhone+ " is not found!");
+					//nhap lai
+				}
+				
+			}
+		}
 		selectMenu(input, managementPhone, phone);
 	}
 
