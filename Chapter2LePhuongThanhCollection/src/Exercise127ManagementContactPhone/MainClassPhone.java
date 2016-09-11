@@ -4,6 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * @Author: Le Phuong Thanh 
+ * @Date: 11/09/2016 
+ * @Version: 1.0 
+ * @Create main class
+ *
+ */
 public class MainClassPhone {
 
 	public static void main(String[] args) throws IOException {
