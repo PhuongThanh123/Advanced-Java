@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MainClass.java&apos; to &apos;Chapter5LePhuongThanh_IOFile/src/exercise62ReadFile&apos;&#x0D;&#x0A;- Original project: &apos;Chapter2LePhuongThanhCollection&apos;&#x0D;&#x0A;- Destination element: &apos;Chapter5LePhuongThanh_IOFile/src/exercise62ReadFile&apos;&#x0D;&#x0A;- Original element: &apos;Exercise126StatisticalTest.MainClass.java&apos;" description="Copy compilation unit" destination="=Chapter5LePhuongThanh_IOFile/src&lt;exercise62ReadFile" element1="/src&lt;Exercise126StatisticalTest{MainClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1473826291388" units="1" version="1.0"/>
+</session>
