@@ -2,6 +2,7 @@ package exercise92ManagementCD;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ResourceBundle;
 
 /**
  * @Author: Le Phuong Thanh 
@@ -12,7 +13,8 @@ import java.util.Collections;
  */
 public class ArrayCD {
 	private ArrayList<CD> arrayCD=new ArrayList<CD>();
-
+	ResourceBundle message=ResourceBundle.getBundle("exercise92ManagementCD/resource_vi_VN");
+	
 	public ArrayCD() {
 		super();
 	}
@@ -45,10 +47,9 @@ public class ArrayCD {
 		String s = "";
 		if (arrayCD.size() != 0) {
 			Collections.sort(arrayCD);
-			s += "--------------List of CD---------------";
+			System.out.println(message.getString("toString"));
 			for (int i = 0; i < arrayCD.size(); i++) {
-				s += arrayCD.get(i).toString();
-				s += "-------------------------------------";
+				s += arrayCD.get(i).toString()+"\n";
 			}
 			s+="\nTotal price: "+calTotalPrice();
 		}

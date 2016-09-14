@@ -1,0 +1,14 @@
+package exercise61Diary;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class MainClass {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		Diary diary=new Diary();
+		diary.readFile();
+
+	}
+
+}

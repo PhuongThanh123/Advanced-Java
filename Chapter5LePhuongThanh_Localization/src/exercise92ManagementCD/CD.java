@@ -71,9 +71,7 @@ public class CD implements Comparable<CD> {
 
 	@Override
 	public String toString() {
-		return "\nInformation CD: \nId CD: " + idCD + "\nName: " + nameCD
-				+ "\nSinger: " + singer + "\nNumber Song: " + numberSong
-				+ "\nPrice: " + price + "\n";
+		return idCD +nameCD+ singer + numberSong+ price;
 	}
 
 	@Override
