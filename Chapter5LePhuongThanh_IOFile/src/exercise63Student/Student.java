@@ -59,7 +59,7 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return name+"\t"+grade+"\t"+mark1+"\t"+mark2;
+		return name+"\t"+grade+"\t"+mark1+"\t"+mark2+"\t"+avgAllYear();
 	}
 	
 

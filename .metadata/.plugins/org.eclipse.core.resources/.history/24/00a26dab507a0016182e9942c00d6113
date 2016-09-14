@@ -1,0 +1,10 @@
+package exercise63Student;
+
+public class MainClassStudent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
