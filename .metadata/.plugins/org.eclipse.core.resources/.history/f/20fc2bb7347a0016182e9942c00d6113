@@ -1,10 +1,13 @@
 package exercise62ReadFile;
 
-
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.EOFException;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -18,10 +21,12 @@ import java.util.TreeMap;
 public class MainClass {
 	
 	public static void main(String[] args) throws IOException {
-			
+		//BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
+		
 		System.out.println("Enter text: ");
+		//String text=input.readLine();
 		String text= readFile();
-		System.out.println("----test---: "+text);
+		System.out.println("----test: "+text);
 		String textWord[]=text.split(" ");
 		
 		//treeMap
@@ -37,11 +42,6 @@ public class MainClass {
 		System.out.println(mapTest);
 		
 	}
-	
-	/**
-	 * @return String after read file
-	 * @throws EOFException
-	 */
 	public static String readFile() throws EOFException {
 		String s="";
 		try (BufferedReader in = new BufferedReader(new FileReader("src/exercise62ReadFile/daily.txt"))) {
@@ -55,6 +55,11 @@ public class MainClass {
 		}
 		return s;
 		
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 	
 

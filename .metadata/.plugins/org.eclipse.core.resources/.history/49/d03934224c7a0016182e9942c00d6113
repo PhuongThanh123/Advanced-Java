@@ -1,0 +1,51 @@
+package exercise63Student;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+public class ManagementStudent {
+	Student student=new Student();
+	
+	ArrayList<Student> arrayStudent=new ArrayList<Student>();
+
+	public ArrayList<Student> getArrayStudent() {
+		return arrayStudent;
+	}
+
+	public void setArrayStudent(ArrayList<Student> arrayStudent) {
+		this.arrayStudent = arrayStudent;
+	}
+
+	public ManagementStudent(ArrayList<Student> arrayStudent) {
+		super();
+		this.arrayStudent = arrayStudent;
+	}
+
+	public ManagementStudent() {
+		super();
+	}
+	public ArrayList<Student>  listAvgGrade10(){
+		ArrayList<Student> arayGrade10= (ArrayList<Student>) arrayStudent.stream().filter(e->e.getGrade()==10).collect(Collectors.toList());
+		return arayGrade10;
+		
+		//DoubleSummaryStatistics summaryStatistics=arayGrade10.stream().mapToDouble((x)->x.avgAllYear()).summaryStatistics();
+		/*long countGreat10=arayGrade10.stream().filter(e->e.avgAllYear()==1).count();
+		
+		long countRather10=arayGrade10.stream().filter(e->e.avgAllYear()==2).count();
+		
+		long countMedium10=arayGrade10.stream().filter(e->e.avgAllYear()==3).count();
+		
+		long countCream10=arayGrade10.stream().filter(e->e.avgAllYear()==4).count();*/
+		
+		
+	}
+	public ArrayList<Student>  listAvgGrade11(){
+		ArrayList<Student> arayGrade10= (ArrayList<Student>) arrayStudent.stream().filter(e->e.getGrade()==11).collect(Collectors.toList());
+		return arayGrade10;
+	}
+	
+	public ArrayList<Student>  listAvgGrade12(){
+		ArrayList<Student> arayGrade10= (ArrayList<Student>) arrayStudent.stream().filter(e->e.getGrade()==12).collect(Collectors.toList());
+		return arayGrade10;
+	}
+}

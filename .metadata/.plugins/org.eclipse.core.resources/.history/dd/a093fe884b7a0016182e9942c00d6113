@@ -1,0 +1,34 @@
+package exercise63Student;
+
+import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class ManagementStudent {
+	Student student=new Student();
+	
+	ArrayList<Student> arrayStudent=new ArrayList<Student>();
+
+	public ArrayList<Student> getArrayStudent() {
+		return arrayStudent;
+	}
+
+	public void setArrayStudent(ArrayList<Student> arrayStudent) {
+		this.arrayStudent = arrayStudent;
+	}
+
+	public ManagementStudent(ArrayList<Student> arrayStudent) {
+		super();
+		this.arrayStudent = arrayStudent;
+	}
+
+	public ManagementStudent() {
+		super();
+	}
+	public double avgGrade(){
+		ArrayList<Student> arayGrade10= (ArrayList<Student>) arrayStudent.stream().filter(e->e.getGrade().equals("10")).collect(Collectors.toList());
+		DoubleSummaryStatistics summaryStatistics=arayGrade10.stream().mapToDouble((x)->x).summaryStatistics();
+		
+	}
+}
