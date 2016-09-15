@@ -1,0 +1,50 @@
+package exercise71ManagmentPhone;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import javax.xml.parsers.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import java.io.*;
+
+public class ManagementContact {
+	Contact c=new Contact();
+	try{
+		DocumentBuilderFactory docFactory= DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder=docFactory.newDocumentBuilder();
+		
+		//root element
+		Document doc=docBuilder.newDocument();
+		Element rootElement=doc.createElement("contacts");
+		doc.appendChild(rootElement);
+		
+		//contact
+		Element contact=doc.createElement("name");
+		rootElement.appendChild(contact);
+		
+		//name element
+		Element name=doc.createElement("name");
+		name.appendChild(doc.createTextNode(c.getName()));
+		contact.appendChild(name);
+		
+		//phone element
+		Element phone=doc.createElement("phone");
+		phone.appendChild(doc.createTextNode(c.getNumberPhone()))
+		contact.appendChild(phone);
+		
+		//write the content into xml file
+		TransformerFactory transformerFactory=TransformerFactory.newInstance();
+		Transformer transformer=transformerFactory.newTransformer();
+		DOMSource source=new DOMSource(doc);
+		
+		StreamResult result=new StreamResult(new File("src/exercise71ManagmentPhone/contacNew.txt"));
+		
+		transformer.transform(source, result);
+		System.out.println("This is success!");
+	}catch( )
+
+}

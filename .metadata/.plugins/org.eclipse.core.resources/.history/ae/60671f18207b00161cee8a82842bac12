@@ -1,0 +1,99 @@
+package exercise71ManagmentPhone;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import org.xml.sax.SAXException;
+
+public class MainClass {
+
+	public static void main(String[] args) throws NumberFormatException,
+			IOException, SAXException,NullPointerException {
+		BufferedReader input = new BufferedReader(new InputStreamReader(
+				System.in));
+		Contact contact = new Contact();
+		ManagementContact managementContact = new ManagementContact();
+		try{
+		selectMenu(input, contact, managementContact);}
+		catch(NullPointerException e){
+			System.out.println("Error: "+e.getMessage());
+		}
+	}
+
+	public static void selectMenu(BufferedReader input, Contact contact,
+			ManagementContact managementContact) throws NumberFormatException,
+			IOException, SAXException {
+		boolean flag = true;
+		while (flag) {
+			System.out
+					.println("Select Menu: \n1) Add new \n2) Search \n3)Update \4)Delete \n5)Exit");
+			int number = Integer.parseInt(input.readLine());
+
+			switch (number) {
+			case 1:
+				addNew(input, contact, managementContact);
+				break;
+
+			default:
+				if (selectYN())
+					continue;
+				else
+					flag = false;
+				break;
+			}
+		}
+
+	}
+
+	public static void addNew(BufferedReader input, Contact contact,
+			ManagementContact managementContact) throws IOException,
+			SAXException {
+		System.out.println("=======Add new COntact=========");
+
+		System.out.println("Enter name: ");
+		String name = input.readLine();
+
+		System.out.println("Enter number phone: ");
+		String numberPhone = input.readLine();
+
+		contact = new Contact(name, numberPhone);
+		managementContact.addNew(contact);
+		
+		System.out.println(managementContact.toString());
+		
+		managementContact.textTransfomer();
+
+	}
+
+	public static boolean selectYN() throws IOException {
+		BufferedReader input = new BufferedReader(new InputStreamReader(
+				System.in));
+		System.out.println("Do you want to continue");
+		String st = input.readLine();
+		boolean flag = false;
+		while (!flag) {
+			switch (st) {
+			case "N":
+			case "NO":
+			case "no":
+			case "n":
+				return false;
+
+			case "Y":
+			case "YES":
+			case "yes":
+			case "y":
+				return true;
+			default:
+				System.out.println("Choose again!");
+				st = input.readLine();
+				break;
+			}
+
+		}
+
+		return false;
+	}
+
+}

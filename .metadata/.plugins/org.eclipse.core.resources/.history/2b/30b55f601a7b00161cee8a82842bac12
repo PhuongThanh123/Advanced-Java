@@ -1,0 +1,106 @@
+package exercise71ManagmentPhone;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ManagementContact {
+	Contact c = new Contact();
+	List<Contact> listContact=new ArrayList<Contact>();
+	
+	
+	public ManagementContact() {
+		super();
+	}
+
+	public ManagementContact(List<Contact> listContact) {
+		super();
+		this.listContact = listContact;
+	}
+
+	public List<Contact> getListContact() {
+		return listContact;
+	}
+
+	public void setListContact(List<Contact> listContact) {
+		this.listContact = listContact;
+	}
+	public void addNew() {
+		listContact.add(c);
+		
+	}
+
+	public void textTransfomer() throws FileNotFoundException, SAXException, IOException {
+
+		
+		try {
+			String filePath="src/exercise71ManagmentPhone/Contac.txt";
+			File xmlFile=new File(filePath);
+			DocumentBuilderFactory docFactory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+			// root element
+			Document doc = docBuilder.newDocument();
+			Element rootElement = doc.createElement("contacts");
+			doc.appendChild(rootElement);
+
+			// contact
+			Element contact = doc.createElement("name");
+			rootElement.appendChild(contact);
+
+			// name element
+			Element name = doc.createElement("name");
+			name.appendChild(doc.createTextNode(c.getName()));
+			contact.appendChild(name);
+
+			// phone element
+			Element phone = doc.createElement("phone");
+			phone.appendChild(doc.createTextNode(c.getNumberPhone()));
+			contact.appendChild(phone);
+
+			// write the content into xml file
+			TransformerFactory transformerFactory = TransformerFactory
+					.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+
+			
+			
+			if(xmlFile.isFile()){
+				doc=docBuilder.parse(new FileInputStream(xmlFile));
+				doc.getDocumentElement().normalize();
+				rootElement=doc.getDocumentElement();// get root
+				
+				StreamResult result = new StreamResult(filePath);
+
+				transformer.transform(source, result);
+				System.out.println("This is success!");
+			}else{
+				System.out.println("No find: "+filePath);
+				System.out.println("Create new file : Contact 123");
+				rootElement=doc.createElement("Contact123");//create root
+						doc.appendChild(rootElement);
+						StreamResult result = new StreamResult(filePath);
+
+						transformer.transform(source, result);
+						System.out.println("This is success!");
+			}
+
+		} catch (ParserConfigurationException | TransformerException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,24 @@
+package exercise71ManagmentPhone;
+
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import javax.xml.parsers.*;
+import java.io.*;
+public class ManagementContact {
+	Contact c=new Contact();
+	try{
+		DocumentBuilderFactory docFactory= DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder=docFactory.newDocumentBuilder();
+		
+		//root element
+		Document doc=docBuilder.newDocument();
+		Element rootElement=doc.createElement("contacts");
+		doc.appendChild(rootElement);
+		
+		//contact
+		Element contact=doc.createElement("name");
+		rootElement.appendChild("contact");
+	}
+
+}

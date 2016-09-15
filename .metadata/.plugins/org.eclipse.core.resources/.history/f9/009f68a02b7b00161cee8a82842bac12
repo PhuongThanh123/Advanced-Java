@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Contact123>
+	<contact>
+		<name>tt</name>
+		<phone>1234</phone>
+	</contact>
+	<contact>
+		<name>abcd</name>
+		<phone>12345</phone>
+	</contact>
+</Contact123>
