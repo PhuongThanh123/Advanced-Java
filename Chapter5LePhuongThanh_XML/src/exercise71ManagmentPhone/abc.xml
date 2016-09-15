@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Contact123>
-	<contact>
-		<name>thanh</name>
-		<phone>456</phone>
-	</contact>
-	<contact>
-		<name>bcc</name>
-		<phone>543</phone>
-	</contact>
-</Contact123>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Contact123><contact><name>thanh</name><phone>123</phone></contact><contact><name>abc</name><phone>454</phone></contact></Contact123>

@@ -44,9 +44,6 @@ public class MainClass {
 			case 1:
 				addNew(input, contact, managementContact, filePath);
 				break;
-			case 4:
-				delete(input, contact, managementContact, filePath);
-				break;
 			case 5:
 				System.out.println(managementContact.toString());
 				break;
@@ -59,14 +56,6 @@ public class MainClass {
 			}
 		}
 
-	}
-	public static void delete(BufferedReader input, Contact contact,
-			ManagementContact managementContact,String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
-		
-		System.out.println("Enter name delete: ");
-		String name=input.readLine();
-		System.out.println(managementContact.deleteContact(name, filePath));
-		
 	}
 
 	public static void addNew(BufferedReader input, Contact contact,
@@ -127,6 +116,5 @@ public class MainClass {
 
 		return false;
 	}
-	
 
 }

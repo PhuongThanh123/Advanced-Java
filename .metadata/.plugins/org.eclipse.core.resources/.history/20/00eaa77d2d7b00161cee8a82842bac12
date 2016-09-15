@@ -43,24 +43,6 @@ public class ManagementContact {
 		listContact.add(c);
 		
 	}
-	public String deleteContact(String name, String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
-		Document doc= getDoc(filePath);
-		Element rootElement = doc.getDocumentElement();
-		
-		
-		NodeList nodeList = rootElement.getElementsByTagName("contact");
-		for (int i = 0; i < nodeList.getLength(); i++) {
-			
-			Contact contact = getFileContact(nodeList.item(i));
-			if (contact.getName().equals(name)) {
-				while (nodeList.item(i).hasChildNodes())
-					rootElement.removeChild(nodeList.item(i));
-				return name + " was removed";
-			}
-		}
-		return name + " was not found";
-		
-	}
 
 	public Document getDoc(String filePath) throws ParserConfigurationException, FileNotFoundException, SAXException, IOException {
 		//String filePath="src/exercise71ManagmentPhone/abc.xml";

@@ -54,7 +54,7 @@ public class ManagementContact {
 			Contact contact = getFileContact(nodeList.item(i));
 			if (contact.getName().equals(name)) {
 				while (nodeList.item(i).hasChildNodes())
-					rootElement.removeChild(nodeList.item(i));
+					nodeList.item(i).removeChild(nodeList.item(i).getFirstChild());
 				return name + " was removed";
 			}
 		}
