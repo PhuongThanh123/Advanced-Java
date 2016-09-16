@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Contact123>
 	<contact>
-		<name>abc</name>
-		<phone>1234</phone>
+		<name>thanh</name>
+		<phone>0987654321</phone>
+	</contact>
+
+	<contact>
+		<name>thuy</name>
+		<phone>0987654321</phone>
+	</contact>
+	<contact>
+		<name>Ngoc</name>
+		<phone>0987654321</phone>
 	</contact>
 </Contact123>

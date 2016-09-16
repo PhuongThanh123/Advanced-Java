@@ -7,6 +7,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.*;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -18,16 +19,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManagementContact {
-	Contact c = new Contact();
+//	Contact c = new Contact();
 	List<Contact> listContact=new ArrayList<Contact>();
 	
 	
 	public ManagementContact() {
-		super();
+		
 	}
 
 	public ManagementContact(String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
-		super();
 		this.viewFile(filePath);
 	}
 
@@ -43,23 +43,46 @@ public class ManagementContact {
 		listContact.add(c);
 		
 	}
-	public String deleteContact(String name, String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
+	public String deleteContact( String name, String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException, TransformerException {
+		
 		Document doc= getDoc(filePath);
 		Element rootElement = doc.getDocumentElement();
+
+		NodeList nodes = doc.getElementsByTagName("contact");
 		
+//		while (rootElement.hasChildNodes()) {
+//			rootElement.removeChild(rootElement.getFirstChild());
+//		}
+//		System.out.println("Delete all!");
 		
-		NodeList nodeList = rootElement.getElementsByTagName("contact");
-		for (int i = 0; i < nodeList.getLength(); i++) {
-			
-			Contact contact = getFileContact(nodeList.item(i));
-			if (contact.getName().equals(name)) {
-				while (nodeList.item(i).hasChildNodes())
-					rootElement.removeChild(nodeList.item(i));
+		//duyet node
+		for (int i = 0; i < nodes.getLength(); i++) {
+			//lay node dang duyet
+			Element contact = (Element) nodes.item(i);
+			// <name> cua node đó
+			Element nameContact = (Element) contact.getElementsByTagName("name").item(0);
+			//lay value of node name
+			String pName = nameContact.getTextContent();
+			//so sanh
+			if (pName.equals(name)) {
+				//bang xoa node do
+				rootElement.removeChild(contact);
+				//write file
+				TransformerFactory transformerFactory = TransformerFactory
+						.newInstance();
+				Transformer transformer = transformerFactory.newTransformer();
+				DOMSource source = new DOMSource(doc);
+				StreamResult result = new StreamResult(
+						new File(filePath));
+
+				transformer.transform(source, result);
+				//thong bao kq
 				return name + " was removed";
 			}
 		}
-		return name + " was not found";
 		
+		return name+" was not find";
+
 	}
 
 	public Document getDoc(String filePath) throws ParserConfigurationException, FileNotFoundException, SAXException, IOException {
@@ -78,11 +101,8 @@ public class ManagementContact {
 			
 		
 		}else{
-		//	System.out.println("No find: "+filePath);
-		//	System.out.println("Create new file : Contact 123");
 			rootElement=doc.createElement("Contact123");//create root
 			doc.appendChild(rootElement);
-				//doc.appendChild(rootElement);
 					
 		}
 		
@@ -116,6 +136,10 @@ public class ManagementContact {
 			TransformerFactory transformerFactory = TransformerFactory
 					.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 			DOMSource source = new DOMSource(doc);
 
 			
@@ -149,7 +173,7 @@ public class ManagementContact {
 		if(node.getNodeType()==Node.ELEMENT_NODE){
 			Element element=(Element) node;
 			contact.setName(element.getElementsByTagName("name").item(0).getChildNodes().item(0).getNodeValue());
-			contact.setName(element.getElementsByTagName("phone").item(0).getChildNodes().item(0).getNodeValue());
+			contact.setNumberPhone(element.getElementsByTagName("phone").item(0).getChildNodes().item(0).getNodeValue());
 		}
 		return contact;
 	}
@@ -166,10 +190,14 @@ public class ManagementContact {
 		}
 		
 	}
-	@Override
-	public String toString() {
+//	@Override
+	public String toString(String filePath)
+			throws FileNotFoundException, 
+			ParserConfigurationException, SAXException, IOException {
+		viewFile(filePath);
 		String s="========List Contact========\n";
 		s+="Name\t Phone\n";
+		s+="-------------------------\n";
 		for(int i=0;i<listContact.size();i++){
 			s+=listContact.get(i).toString();
 		}

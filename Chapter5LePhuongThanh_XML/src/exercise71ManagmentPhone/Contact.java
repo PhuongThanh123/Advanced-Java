@@ -31,7 +31,7 @@ public class Contact {
 	@Override
 	public String toString() {
 		
-		return this.name+"\t"+this.numberPhone;
+		return this.name+"\t"+this.numberPhone + "\n";
 	}
 	
 	

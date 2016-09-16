@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -16,12 +17,11 @@ import org.xml.sax.SAXException;
 public class MainClass {
 
 	public static void main(String[] args) throws NumberFormatException,
-			IOException, SAXException, NullPointerException, ParserConfigurationException {
+			IOException, SAXException, NullPointerException, ParserConfigurationException, TransformerException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(
 				System.in));
-		String filePath="src/exercise71ManagmentPhone/abc.xml";
+		String filePath="src/exercise71ManagmentPhone/contact.xml";
 		Contact contact = new Contact();
-		//ManagementContact managementContact = new ManagementContact();
 		ManagementContact managementContact=new ManagementContact(filePath);
 	
 		try {
@@ -33,11 +33,11 @@ public class MainClass {
 
 	public static void selectMenu(BufferedReader input, Contact contact,
 			ManagementContact managementContact,String filePath) throws NumberFormatException,
-			IOException, SAXException, ParserConfigurationException {
+			IOException, SAXException, ParserConfigurationException, TransformerException {
 		boolean flag = true;
 		while (flag) {
 			System.out
-					.println("Select Menu: \n1) Add new \n2) Search \n3)Update \n4)Delete 5) View File \n6)Exit");
+					.println("Select Menu: \n\t1) Add new \n\t2) Search \n\t3) Update \n\t4) Delete \n\t5) View File \n\t6) Exit");
 			int number = Integer.parseInt(input.readLine());
 
 			switch (number) {
@@ -45,12 +45,13 @@ public class MainClass {
 				addNew(input, contact, managementContact, filePath);
 				break;
 			case 4:
-				delete(input, contact, managementContact, filePath);
+				delete(input, managementContact, filePath);
 				break;
 			case 5:
-				System.out.println(managementContact.toString());
+				
 				break;
 			default:
+				System.out.println("Select wrong!");
 				if (selectYN())
 					continue;
 				else
@@ -60,14 +61,16 @@ public class MainClass {
 		}
 
 	}
-	public static void delete(BufferedReader input, Contact contact,
-			ManagementContact managementContact,String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
+	public static void delete(BufferedReader input,
+			ManagementContact managementContact,String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException, TransformerException {
 		
 		System.out.println("Enter name delete: ");
 		String name=input.readLine();
-		System.out.println(managementContact.deleteContact(name, filePath));
-		
+		String s = managementContact.deleteContact(name,filePath);
+		System.out.println(s);
+		System.out.println(managementContact.toString(filePath));
 	}
+	
 
 	public static void addNew(BufferedReader input, Contact contact,
 			ManagementContact managementContact,String filePath) throws IOException,
@@ -82,9 +85,8 @@ public class MainClass {
 		String numberPhone = input.readLine();
 
 		contact = new Contact(name, numberPhone);
-		managementContact.textTransfomer(contact, filePath);
-		
 		managementContact.addNew(contact);
+		managementContact.textTransfomer(contact, filePath);
 
 		System.out.println(managementContact.toString());
 
@@ -93,8 +95,6 @@ public class MainClass {
 			ManagementContact managementContact,String filePath) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
 		System.out.println("====View File====");
 		
-		//managementContact.viewFile(filePath);
-		//System.out.println();
 	}
 	
 

@@ -1,0 +1,73 @@
+package exercise83AddNewProduct;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mysql.cj.x.json.DbDoc;
+
+public class CategoryConroller {
+	Database db=new Database();
+	private List<Category> listCategory=new ArrayList<Category>();
+	Category category=new Category();
+
+	public List<Category> getListCategory() {
+		return listCategory;
+	}
+
+	public void setListCategory(List<Category> listCategory) {
+		this.listCategory = listCategory;
+	}
+
+	public CategoryConroller(List<Category> listCategory) {
+		super();
+		this.listCategory = listCategory;
+	}
+
+	public CategoryConroller() {
+		super();
+	}
+	public List<Category> getAllCategory() {
+		listCategory=new ArrayList<Category>();
+		
+		//Category category=null;
+		try (Connection conn=db.connect()){
+			String sql="SELECT * FROM category";
+			Statement statement=conn.createStatement();
+			
+			
+			ResultSet resultSet=statement.executeQuery(sql);
+			
+			while(resultSet.next()){
+				//listCategory=new ArrayList<Category>();
+				category=new Category();
+				category.setName(resultSet.getString("name"));
+				category.setDescription(resultSet.getString("description"));
+				listCategory.add(category);
+				
+			}
+		} catch (Exception e) {
+			System.out.println("Error: "+e.getMessage());
+		}
+		
+		
+		return listCategory;
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		String s="===============List Category===========\n";
+		s+="Name \tdescipton\n";
+		for(int i=0;i<listCategory.size();i++){
+			s+=listCategory.get(i).toString();
+		}
+		return s;
+	}
+	
+
+}
