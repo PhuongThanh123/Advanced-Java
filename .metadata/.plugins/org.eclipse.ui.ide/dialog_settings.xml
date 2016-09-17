@@ -5,9 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\ThanhLaoCong\Documents\Advanced-Java-Source\Exercise127DrawShape"/>
+			<item value="C:\Users\ThanhLaoCong\Documents\Advanced-Java-Source\Chapter1LePhuongThanhPart4"/>
+			<item value="C:\Users\ThanhLaoCong\Documents\Advanced-Java-Source\Chapter2lePhuongThanhGeneric"/>
 			<item value="C:\Users\ThanhLaoCong\Documents\Advanced-Java-Source\Chapter8LePhuongThanh_JDBC"/>
 			<item value="D:\Advanced-Java-Source\Chapter2LePhuongThanhCollection"/>
-			<item value="D:\Advanced-Java-Source\Chapter5LePhuongThanh_Localization"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
