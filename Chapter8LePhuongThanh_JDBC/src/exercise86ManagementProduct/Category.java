@@ -1,0 +1,50 @@
+package exercise86ManagementProduct;
+
+public class Category {
+	private int id;
+	private String name;
+	private String description;
+	public String getName() {
+		return name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Category(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	public Category() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return this.id+"\t"+ this.name+"\t"+this.description+"\n";
+	}
+
+	public Category(int id, String name, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+	}
+	
+
+}

@@ -1,0 +1,205 @@
+package exercise86STransaction;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class productController {
+	private static BufferedReader input = new BufferedReader(
+			new InputStreamReader(System.in));
+	Database db = new Database();
+	Product product = new Product();
+	List<Product> listProduct = new ArrayList<Product>();
+	CategoryController categoryController=new CategoryController();
+
+	public productController(List<Product> listProduct) {
+		super();
+		this.listProduct = listProduct;
+	}
+
+	public productController() {
+		super();
+	}
+
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
+
+	@Override
+	public String toString() {
+		try {
+			listProduct = getAllProduct();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String s = "================= List Product==================\n";
+		s += "Id \t Name \t Price \t Amount \t Image \t CategoryId \t Date \t OnSell\n ";
+		for (int i = 0; i < listProduct.size(); i++) {
+			s += listProduct.get(i).toString();
+		}
+		return s;
+	}
+
+	public List<Product> getAllProduct() throws ClassNotFoundException,
+			SQLException {
+		listProduct = new ArrayList<Product>();
+
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.setAmount(resultSet.getInt("amount"));
+				product.setImage(resultSet.getString("image"));
+				product.setCategoryId(resultSet.getInt("categoryId"));
+				product.setDate(resultSet.getDate("ceateDate"));
+				product.setOnSell(resultSet.getInt("onSell"));
+				listProduct.add(product);
+			}
+
+		}
+		return listProduct;
+	}
+
+	public void stransaction1() throws ClassNotFoundException, SQLException, NumberFormatException, IOException, ParseException {
+		try (Connection conn = db.connect()) {
+			conn.setAutoCommit(false);
+			Statement statement = conn.createStatement();
+			
+			System.out.println("===========Add new Product===========");
+			
+			System.out.println("Select Category: ");
+			System.out.println(categoryController.toString());
+			
+			int categoryId=Integer.parseInt(input.readLine());
+			
+			System.out.println("Enter name: ");
+			String name=input.readLine();
+			
+			System.out.println("Enter price: ");
+			double price=Double.parseDouble(input.readLine());
+			
+			System.out.println("Enter Amount: ");
+			int amount=Integer.parseInt(input.readLine());
+			
+			System.out.println("Enter image: ");
+			String image=input.readLine();
+			
+			System.out.println("Enter date: ");
+			SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
+			Date date=dateFormat.parse(input.readLine());
+			
+			System.out.println("Enter onSell: ");
+			int onSell=Integer.parseInt(input.readLine());
+			
+			product=new Product(name, price, amount, image, categoryId, date, onSell);
+			
+					
+			
+			String sql = "INSERT INTO product(name, price, amount ,image, categoryId, createDate, onSell) VALUES ('"
+					+ product.getName()
+					+ "','"
+					+ product.getPrice()
+					+ "', '"
+					+ product.getAmount()
+					+ "','"
+					+ product.getImage()
+					+ "','"
+					+ product.getCategoryId()
+					+ "','"
+					+ product.getDate()
+					+ "','" + product.getOnSell() + "');";
+
+			statement.equals(sql);
+			
+			System.out.println("===========Update new Product===========");
+			
+			System.out.println("Enter id: ");
+			int id=Integer.parseInt(input.readLine());
+			
+			while(!isId(id)){
+				System.out.println("Enter id againt : ");
+				 id = Integer.parseInt(input.readLine());
+			}
+			
+			System.out.println("Enter price: ");
+			double price1=Double.parseDouble(input.readLine());
+			
+			System.out.println("Enter amount: ");
+			int amount1=Integer.parseInt(input.readLine());
+			
+			product=new Product(id, price1, amount1);
+			
+			sql = "update product set name = "+ product.getName()
+					+" price = " + product.getPrice()
+					+ ", amount = " + product.getAmount() 
+					+ ", image = "  + product.getImage()
+					+ " , categoryIf = "+product.getCategoryId()
+					+ ", createDay = "+product.getDate()
+					+", onSell = "+product.getOnSell()
+					+" where id = "
+					+ product.getId() + "";
+			statement.equals(sql);
+			
+			System.out.println("===========Delete new Product===========");
+			
+			System.out.println("Enter id: ");
+			int idDelete=Integer.parseInt(input.readLine());
+			
+			while(!isId(id)){
+				System.out.println("Enter id againt: ");
+				 id = Integer.parseInt(input.readLine());
+			}
+			
+			product=new Product(idDelete);
+			
+			sql = "delete from product where id = " + product.getId()
+					+ "";
+			
+			statement.equals(sql);
+			
+			conn.commit();
+			
+			System.out.println("Commit is successfully!");
+			System.out.println(toString());
+		}catch (SQLException e) {
+			System.out.println("Error: "+e.getMessage());
+		}
+
+	}
+
+	public boolean isId(int id) throws ClassNotFoundException, SQLException {
+		listProduct = getAllProduct();
+		for (int i = 0; i < listProduct.size(); i++) {
+			if (listProduct.get(i).getId() == id) {
+				return true;
+
+			}
+		}
+		return false;
+
+	}
+
+	public void updateProduct() {
+
+	}
+}

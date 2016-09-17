@@ -1,0 +1,103 @@
+package exercise86STransaction;
+
+import java.util.Date;
+
+public class Product {
+	private int id;
+	private String name;
+	private double price;
+	private int amount;
+	private String image;
+	private int categoryId;
+	private Date date;
+	private int onSell;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public int getOnSell() {
+		return onSell;
+	}
+	public void setOnSell(int onSell) {
+		this.onSell = onSell;
+	}
+	public Product(int id, String name, double price, int amount, String image,
+			int categoryId, Date date, int onSell) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.amount = amount;
+		this.image = image;
+		this.categoryId = categoryId;
+		this.date = date;
+		this.onSell = onSell;
+	}
+	public Product() {
+		super();
+	}
+	
+	public Product(String name, double price, int amount, String image,
+			int categoryId, Date date, int onSell) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.amount = amount;
+		this.image = image;
+		this.categoryId = categoryId;
+		this.date = date;
+		this.onSell = onSell;
+	}
+	
+	public Product(int id, double price, int amount) {
+		super();
+		this.id = id;
+		this.price = price;
+		this.amount = amount;
+	}
+	@Override
+	public String toString() {
+		return this.id +"\t"+this.name+"\t"+this.price+"\t"+this.amount+"\t"
+				+this.image+"\t"+this.categoryId+"\t"+this.date+"\t"+this.onSell+"\n";
+	}
+	
+
+}

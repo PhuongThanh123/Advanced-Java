@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\ThanhLaoCong\Documents\Advanced-Java-Source\Chapter8LePhuongThanh_JDBC"/>
 			<item value="D:\Advanced-Java-Source\Chapter2LePhuongThanhCollection"/>
 			<item value="D:\Advanced-Java-Source\Chapter5LePhuongThanh_Localization"/>
 		</list>

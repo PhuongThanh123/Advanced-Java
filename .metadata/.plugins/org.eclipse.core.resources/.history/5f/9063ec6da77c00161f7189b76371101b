@@ -1,0 +1,34 @@
+package exercise86STransaction;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class productController {
+	Product product=new Product();
+	List<Product> listProduct=new ArrayList<Product>();
+	public productController(List<Product> listProduct) {
+		super();
+		this.listProduct = listProduct;
+	}
+	public productController() {
+		super();
+	}
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
+	@Override
+	public String toString() {
+		String s="================= List Product==================\n";
+		s+= "Id \t Name \t Price \t Amount \t Image \t CategoryId \t Date \t OnSell\n ";
+		for(int i=0;i<listProduct.size();i++){
+			s+=listProduct.get(i).toString();
+		}
+		return s;
+	}
+	
+	
+
+}

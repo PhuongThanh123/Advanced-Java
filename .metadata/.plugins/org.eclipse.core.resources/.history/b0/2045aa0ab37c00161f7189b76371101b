@@ -1,0 +1,77 @@
+package exercise86STransaction;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.text.ParseException;
+
+
+public class MainClass {
+	private static BufferedReader input = new BufferedReader(
+			new InputStreamReader(System.in));
+
+	public static void main(String[] args) throws NumberFormatException,
+			IOException, ClassNotFoundException, SQLException, ParseException {
+
+		productController productController = new productController();
+		boolean flag = true;
+		while (flag) {
+			System.out
+					.println("Select Transaction: \n\t1) Add - Update - Delete \n\t2) Add - Update - Delete \n\t3) Add - Delete - Update ");
+			int number = Integer.parseInt(input.readLine());
+
+			switch (number) {
+			case 1:
+				productController.stransaction1();
+
+				break;
+			case 2:
+				productController.stransaction2();
+				break;
+			case 3:
+				productController.stransaction3();
+				break;
+			default:
+				System.out.println("Select wrong !");
+				if (selectYN())
+					continue;
+				else
+					flag = false;
+				break;
+			}
+		}
+
+	}
+
+	public static boolean selectYN() throws IOException {
+		BufferedReader input = new BufferedReader(new InputStreamReader(
+				System.in));
+		System.out.println("Do you want to continue");
+		String st = input.readLine();
+		boolean flag = false;
+		while (!flag) {
+			switch (st) {
+			case "N":
+			case "NO":
+			case "no":
+			case "n":
+				return false;
+
+			case "Y":
+			case "YES":
+			case "yes":
+			case "y":
+				return true;
+			default:
+				System.out.println("Choose again!");
+				st = input.readLine();
+				break;
+			}
+
+		}
+
+		return false;
+	}
+
+}

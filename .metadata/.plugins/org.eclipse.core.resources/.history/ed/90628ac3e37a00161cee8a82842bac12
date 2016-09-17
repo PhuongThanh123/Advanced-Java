@@ -1,8 +1,0 @@
-package exercise64Staff;
-
-public class Snippet {
-	public static void main(String[] args) {
-		DataStream
-	}
-}
-

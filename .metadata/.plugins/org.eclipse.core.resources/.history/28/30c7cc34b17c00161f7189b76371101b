@@ -1,0 +1,30 @@
+package exercise86STransaction;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import exercise83AddNewProduct.ProductController;
+
+public class MainClass {
+	private static BufferedReader input = new BufferedReader(
+			new InputStreamReader(System.in));
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		ProductController productController=new ProductController();
+		System.out.println("Select Transaction: 1) Add - Update - Delete 2) Add - Update - Delete 3) Add - Delete - Update ");
+		int number=Integer.parseInt(input.readLine());
+		switch (number) {
+		case 1:
+			productController.s
+			
+			break;
+
+		default:
+			break;
+		}
+		
+		
+
+	}
+
+}

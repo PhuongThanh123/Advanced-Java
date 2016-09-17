@@ -1,13 +1,11 @@
 package exercise83AddNewProduct;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.x.json.DbDoc;
 
 public class CategoryConroller {
 	Database db=new Database();
@@ -30,12 +28,15 @@ public class CategoryConroller {
 	public CategoryConroller() {
 		super();
 	}
+	/**
+	 * @return list Category
+	 */
 	public List<Category> getAllCategory() {
 		listCategory=new ArrayList<Category>();
 		
-		//Category category=null;
+		//Category Category=null;
 		try (Connection conn=db.connect()){
-			String sql="SELECT * FROM category";
+			String sql="SELECT * FROM Category";
 			Statement statement=conn.createStatement();
 			
 			
@@ -58,9 +59,21 @@ public class CategoryConroller {
 		
 		
 	}
+	
+	/**
+	 * @param index
+	 * @return 1 record of Category
+	 */
+	public List<Category> getCategory(int index){
+		for(int i=0;i<listCategory.size();i++){
+			listCategory.get(index).toString();
+		}
+		return listCategory;
+	}
 
 	@Override
 	public String toString() {
+		getAllCategory();
 		String s="===============List Category===========\n";
 		s+="Name \tdescipton\n";
 		for(int i=0;i<listCategory.size();i++){

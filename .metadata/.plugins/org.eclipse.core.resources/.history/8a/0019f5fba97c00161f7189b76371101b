@@ -1,0 +1,98 @@
+package exercise86STransaction;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class productController {
+	Database db=new Database();
+	Product product = new Product();
+	List<Product> listProduct = new ArrayList<Product>();
+
+	public productController(List<Product> listProduct) {
+		super();
+		this.listProduct = listProduct;
+	}
+
+	public productController() {
+		super();
+	}
+
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
+
+	@Override
+	public String toString() {
+		try {
+			listProduct=getAllProduct();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String s = "================= List Product==================\n";
+		s += "Id \t Name \t Price \t Amount \t Image \t CategoryId \t Date \t OnSell\n ";
+		for (int i = 0; i < listProduct.size(); i++) {
+			s += listProduct.get(i).toString();
+		}
+		return s;
+	}
+
+	public List<Product> getAllProduct() throws ClassNotFoundException,
+			SQLException {
+		listProduct = new ArrayList<Product>();
+
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.setAmount(resultSet.getInt("amount"));
+				product.setImage(resultSet.getString("image"));
+				product.setCategoryId(resultSet.getInt("categoryId"));
+				product.setDate(resultSet.getDate("ceateDate"));
+				product.setOnSell(resultSet.getInt("onSell"));
+				listProduct.add(product);
+			}
+
+		}
+		return listProduct;
+	}
+	public void addProduct() throws ClassNotFoundException, SQLException {
+		try (Connection conn = db.connect()) {
+			String sql = "INSERT INTO product(name, price,amount,categoryId, createDate, onSell) VALUES ('"
+					+ product.getName()
+					+ "','"
+					+ product.getPrice()
+					+ "', '"
+					+ product.getAmount()
+					+ "','"
+					+product.getImage()
+					+ "','"
+					+ product.getCategoryId()
+					+ "','"
+					+product.getDate()
+					+ "','"
+					+product.getOnSell()
+					+ "');";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.execute();
+		}
+		
+	}
+}

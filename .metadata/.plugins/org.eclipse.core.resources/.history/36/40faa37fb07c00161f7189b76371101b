@@ -1,0 +1,14 @@
+package exercise86STransaction;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class MianClass {
+
+	public static void main(String[] args) {
+		private static BufferedReader input = new BufferedReader(
+				new InputStreamReader(System.in));
+
+	}
+
+}

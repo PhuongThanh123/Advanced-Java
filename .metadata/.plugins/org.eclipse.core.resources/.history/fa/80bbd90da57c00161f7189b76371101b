@@ -1,0 +1,16 @@
+package exercise86STransaction;
+
+import java.util.Date;
+
+public class Product {
+	private int id;
+	private String name;
+	private double price;
+	private int amount;
+	private String image;
+	private int categoryId;
+	private Date date;
+	private int onSell;
+	
+
+}

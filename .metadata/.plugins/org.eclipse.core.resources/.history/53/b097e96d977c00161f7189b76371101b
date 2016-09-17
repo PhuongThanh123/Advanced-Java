@@ -1,0 +1,160 @@
+package exercise86ManagementProduct;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductController {
+	private List<Product> listProduct = new ArrayList<Product>();
+	Product product = new Product();
+	Database db = new Database();
+
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
+
+	public ProductController(List<Product> listProduct) {
+		super();
+		this.listProduct = listProduct;
+	}
+
+	public ProductController() {
+		super();
+	}
+
+	public List<Product> getAllProduct() throws ClassNotFoundException,
+			SQLException {
+		listProduct = new ArrayList<Product>();
+
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.setAmount(resultSet.getInt("amount"));
+				product.setIdcategory(resultSet.getInt("categoryid"));
+				listProduct.add(product);
+			}
+
+		}
+		return listProduct;
+	}
+
+	public void allNewProduct(Product product) throws ClassNotFoundException,
+			SQLException {
+
+		try (Connection conn = db.connect()) {
+			String sql = "INSERT INTO product(name, price,amount,categoryid) VALUES ('"
+					+ product.getName()
+					+ "','"
+					+ product.getPrice()
+					+ "', '"
+					+ product.getAmount()
+					+ "','"
+					+ product.getIdcategory()
+					+ "');";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.execute();
+		}
+
+	}
+
+	public List<Product> getListSearch(String name)
+			throws ClassNotFoundException, SQLException {
+		listProduct = new ArrayList<>();
+		product = new Product();
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product where name like '%" + name
+					+ "%'";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.setAmount(resultSet.getInt("amount"));
+				product.setIdcategory(resultSet.getInt("categoryid"));
+				listProduct.add(product);
+			}
+		}
+		return listProduct;
+	}
+	public List<Product> getListUpdate(int id){
+		listProduct = new ArrayList<>();
+		product = new Product();
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product where name like '" + id
+					+ "'";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.setAmount(resultSet.getInt("amount"));
+				product.setIdcategory(resultSet.getInt("categoryid"));
+				listProduct.add(product);
+			}
+		}
+		return listUpdateProduct;
+	}
+	public String toStringSearch(String name) {
+
+		try {
+			listProduct = getListSearch(name);
+			int len = listProduct.size();
+			if (len > 0) {
+				String s = name + " is find has " + len + " product!+\n";
+				s += "==================List====================\n";
+				s += "Id\t\tName \t\t\t Price \t\t Amount \t\t ID category\n";
+				for (int i = 0; i < listProduct.size(); i++) {
+					s += listProduct.get(i).toString();
+				}
+				return s;
+			}
+		}
+
+		catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		try {
+			listProduct = getAllProduct();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String s = "==================List====================\n";
+		s += "Id\t\tName \t\t\t Price \t\t Amount \t\t ID category\n";
+		for (int i = 0; i < listProduct.size(); i++) {
+			s += listProduct.get(i).toString();
+		}
+		return s;
+	}
+
+}

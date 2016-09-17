@@ -1,0 +1,67 @@
+package exercise86STransaction;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class productController {
+	Database db=new Database();
+	Product product = new Product();
+	List<Product> listProduct = new ArrayList<Product>();
+
+	public productController(List<Product> listProduct) {
+		super();
+		this.listProduct = listProduct;
+	}
+
+	public productController() {
+		super();
+	}
+
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
+
+	@Override
+	public String toString() {
+		String s = "================= List Product==================\n";
+		s += "Id \t Name \t Price \t Amount \t Image \t CategoryId \t Date \t OnSell\n ";
+		for (int i = 0; i < listProduct.size(); i++) {
+			s += listProduct.get(i).toString();
+		}
+		return s;
+	}
+
+	public List<Product> getAllProduct() throws ClassNotFoundException,
+			SQLException {
+		listProduct = new ArrayList<Product>();
+
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from product";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+			while (resultSet.next()) {
+				product = new Product();
+				product.setId(resultSet.getInt("id"));
+				product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getDouble("price"));
+				product.set
+				product.setAmount(resultSet.getInt("amount"));
+				product.setIdcategory(resultSet.getInt("categoryid"));
+				listProduct.add(product);
+			}
+
+		}
+		return listProduct;
+	}
+}
