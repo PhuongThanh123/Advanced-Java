@@ -1,0 +1,154 @@
+package handlingStream;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 20/09/2016
+ * @ Desciptione: Main Class hand handling list employee
+ */
+public class MainClass {
+	static List<Emloyee> listEmloyee = new ArrayList<Emloyee>();
+
+	public static void main(String[] args) {
+
+		listEmloyee = createList();
+		
+		toString(listEmloyee);
+		System.out.println("Total emloyee have salary > 3000000: "
+				+ countSalary3000000(listEmloyee)+" people");
+		
+		emloyeeIsAnh(listEmloyee);
+		
+		DoubleSummaryStatistics statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		DecimalFormat decimalFormat=new DecimalFormat("#,###.##");
+		
+		System.out.println("Highest salary of emloyee in List: "
+				+ decimalFormat.format(getSalaryHighest(listEmloyee, statisticsEmloyee))+" VND");
+		System.out.println("Lowest salary of emloyee in List: "
+				+ decimalFormat.format(getSalaryLowest(listEmloyee, statisticsEmloyee))+" VND");
+		System.out.println("Average of all Avg salary of emloyee: "
+				+ decimalFormat.format(getSalaryAvg(listEmloyee, statisticsEmloyee))+" VND");
+
+	}
+
+	/**
+	 * This is method create list employee include name, age and salary
+	 * @return list employ created
+	 */
+	public static List<Emloyee> createList() {
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 1000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		return listEmloyee;
+
+	}
+
+	/**
+	 * This is method print list employee
+	 * @param listEmloyee
+	 */
+	public static void toString(List<Emloyee> listEmloyee) {
+		
+		System.out.println("\t===========List Emloyee=============");
+		System.out.println("Name\t\t\tAge\tSalary");
+		System.out.println("----------------------------------------");
+		listEmloyee.stream().forEach(System.out::print);
+		System.out.println("----------------------------------------");
+	}
+
+	/**
+	 * this is method count salary of employee > 3000000
+	 * @param listEmloyee
+	 * @return list employee have salary > 3000000
+	 */
+	public static long countSalary3000000(List<Emloyee> listEmloyee) {
+		long count = listEmloyee.stream().filter(e -> e.getSalary() > 3000000)
+				.count();
+		return count;
+	}
+
+	/**
+	 * this method filter and print list employee have name contain 'Anh'
+	 * @param listEmloyee
+	 */
+	public static void emloyeeIsAnh(List<Emloyee> listEmloyee) {
+	
+		System.out.println("\t===List Emloyee have name contain is 'Anh'===");
+		
+		List<Emloyee> listName = listEmloyee.stream()
+				.filter(e -> e.getName().contains("Anh"))
+				.collect(Collectors.toList());
+		
+		System.out.println("Name\t\t\tAge\tSalary");
+		System.out.println("----------------------------------------");
+		listName.forEach(System.out::print);
+		System.out.println("----------------------------------------");
+		
+	}
+	
+	public static double getAvgAge(List<Emloyee> listEmloyee) {
+		
+		double avgAge= listEmloyee.stream().mapToDouble(e->e.getAge()).summaryStatistics().getAverage());
+		
+	}
+
+	/**
+	 * this is method calculation highest salary
+	 * @param listEmloyee
+	 * @param statisticsEmloyee
+	 * @return highest salary
+	 */
+	public static double getSalaryHighest(List<Emloyee> listEmloyee,
+			DoubleSummaryStatistics statisticsEmloyee) {
+
+		double maxSalary = statisticsEmloyee.getMax();
+		return maxSalary;
+	}
+	
+	/**
+	 * this is method calculation lowest salary
+	 * @param listEmloyee
+	 * @param statisticsEmloyee
+	 * @return lowest salary
+	 */
+	public static double getSalaryLowest(List<Emloyee> listEmloyee,
+			DoubleSummaryStatistics statisticsEmloyee) {
+
+		double minSalary = statisticsEmloyee.getMin();
+		return minSalary;
+	}
+	
+	/**
+	 * this is method calculation average salary
+	 * @param listEmloyee
+	 * @param statisticsEmloyee
+	 * @return average salary
+	 */
+	public static double getSalaryAvg(List<Emloyee> listEmloyee,
+			DoubleSummaryStatistics statisticsEmloyee) {
+
+		double maxSlary = statisticsEmloyee.getAverage();
+		return maxSlary;
+	}
+
+}

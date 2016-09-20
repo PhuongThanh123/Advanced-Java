@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * @author: Le Phuong Thanh
  * @version: 1.0
  * @Date: 19/09/2016
- * @ Deception: Class Database connect database 
+ * @Deception: Class Database connect database 
  */
 public class Database {
 	private static final String JDBC_URL="jdbc:mysql://127.0.0.1/cdstore?useUnicode=true&characterEncoding=utf8";

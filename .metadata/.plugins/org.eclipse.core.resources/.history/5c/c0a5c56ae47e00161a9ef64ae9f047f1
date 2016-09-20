@@ -1,0 +1,14 @@
+package JDBC;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testIsID {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

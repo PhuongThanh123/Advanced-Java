@@ -10,13 +10,14 @@ import java.util.stream.Collectors;
  * @author: Le Phuong Thanh
  * @version: 1.0
  * @Date: 20/09/2016
- * @ Desciptione: Main Class hand handling list employee
+ * @Desciption: Main Class hand handling list employee
  */
 public class MainClass {
 	static List<Emloyee> listEmloyee = new ArrayList<Emloyee>();
 
 	public static void main(String[] args) {
-
+		
+		DecimalFormat decimalFormat=new DecimalFormat("#,###.##");
 		listEmloyee = createList();
 		
 		toString(listEmloyee);
@@ -25,10 +26,12 @@ public class MainClass {
 		
 		emloyeeIsAnh(listEmloyee);
 		
+		System.out.println("Average age of Employee is: "+decimalFormat.format(getAvgAge(listEmloyee))+" age");
+		
 		DoubleSummaryStatistics statisticsEmloyee = listEmloyee.stream()
 				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
 		
-		DecimalFormat decimalFormat=new DecimalFormat("#,###.##");
+		
 		
 		System.out.println("Highest salary of emloyee in List: "
 				+ decimalFormat.format(getSalaryHighest(listEmloyee, statisticsEmloyee))+" VND");
@@ -103,6 +106,13 @@ public class MainClass {
 		System.out.println("----------------------------------------");
 		listName.forEach(System.out::print);
 		System.out.println("----------------------------------------");
+		
+	}
+	
+	public static double getAvgAge(List<Emloyee> listEmloyee) {
+		
+		double avgAge= listEmloyee.stream().mapToDouble(e->e.getAge()).summaryStatistics().getAverage();
+		return avgAge;
 		
 	}
 

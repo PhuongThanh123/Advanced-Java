@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author: Le Phuong Thanh
  * @version: 1.0
  * @Date: 19/09/2016
- * @Desciptione: Class CD
+ * @Desciption: Class CD
  */
 public class CD implements Serializable {
 	/**
@@ -74,8 +74,8 @@ public class CD implements Serializable {
 
 	@Override
 	public String toString() {
-		return this.id + "\t" + this.name + "\t\t\t" + this.singer + "\t"
-				+ this.numbersongs + "\t" + this.price + "\n";
+		return this.id + "\t" + this.name + "\t\t\t" + this.singer + "\t\t"
+				+ this.numbersongs + "\t\t" + this.price + "\n";
 	}
 
 	public CD(String name, String singer, int numbersongs, double price) {

@@ -2,16 +2,51 @@
 <store>
     <CD>
         <id>1</id>
-        <name>Mãi mãi một tình yêu</name>
-        <singer>Đan Trường</singer>
-        <numbersongs>123</numbersongs>
-        <price>123.0</price>
+        <name>Hoa Hoc Tro</name>
+        <singer>Lady Gaga</singer>
+        <numbersongs>12</numbersongs>
+        <price>20000.0</price>
     </CD>
     <CD>
         <id>2</id>
-        <name>Love Song</name>
+        <name>Mùa Tuyết Trắng</name>
         <singer>Đông Nhi</singer>
-        <numbersongs>9</numbersongs>
-        <price>18000.0</price>
+        <numbersongs>15</numbersongs>
+        <price>35000.0</price>
+    </CD>
+    <CD>
+        <id>3</id>
+        <name>Chân Trời Mới</name>
+        <singer>Hồng Nhung</singer>
+        <numbersongs>14</numbersongs>
+        <price>200000.0</price>
+    </CD>
+    <CD>
+        <id>4</id>
+        <name>Tình yêu Hồng</name>
+        <singer>Westlife</singer>
+        <numbersongs>12</numbersongs>
+        <price>200000.0</price>
+    </CD>
+    <CD>
+        <id>6</id>
+        <name>Đồi Hoa Sim</name>
+        <singer>Trường Vũ</singer>
+        <numbersongs>45000</numbersongs>
+        <price>13.0</price>
+    </CD>
+    <CD>
+        <id>7</id>
+        <name>Đồi Cỏ Xanh</name>
+        <singer>Phương Thanh</singer>
+        <numbersongs>32000</numbersongs>
+        <price>17.0</price>
+    </CD>
+    <CD>
+        <id>8</id>
+        <name>Màu Mực Tím</name>
+        <singer>Minh Thuậnn</singer>
+        <numbersongs>10</numbersongs>
+        <price>30000.0</price>
     </CD>
 </store>

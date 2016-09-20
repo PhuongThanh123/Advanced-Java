@@ -13,15 +13,9 @@ import java.util.List;
  * @author: Le Phuong Thanh
  * @version: 1.0
  * @Date: 19/09/2016
- * @ Desciptione: Class controller of CD
+ * @Desciption: Class controller of CD
  */
 
-/**
- * @author: Le Phuong Thanh
- * @version: 1.0
- * @Date: 19/09/2016
- * @ Desciptione: Class
- */
 public class CDController {
 	//Connect database
 	Database db = new Database();
@@ -191,7 +185,7 @@ public class CDController {
 	public String toStringUpdate(CD cd)
 			throws ClassNotFoundException, SQLException {
 		listCD = getAllCD();
-		String s = (cd.getId()+1) + " is find";
+		String s = "ID: "+(cd.getId()) + " is find";
 
 		s += "\n==================List====================\n";
 		s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
@@ -215,7 +209,7 @@ public class CDController {
 			if (len > 0) {
 				String s = name + " is find has " + len + " CD!\n";
 				s += "\n==================List====================\n";
-				s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
+				s += "Id\t\tName\tSinger\t NumberSongs\tprice\n";
 
 				for (int i = 0; i < listCD.size(); i++) {
 					s += listCD.get(i).toString();
@@ -240,8 +234,8 @@ public class CDController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String s = "==================List====================\n";
-		s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
+		String s = "=======================================List=======================================\n";
+		s += "Id\t\tName\t\tSinger\t\tNumberSongs\t\tprice\n";
 		for (int i = 0; i < listCD.size(); i++) {
 			s += listCD.get(i).toString();
 		}

@@ -1,0 +1,150 @@
+package workWithTXT;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 19/09/2016
+ * @ Desciptione: Class controller CD
+ */
+public class CDController {
+	//Connect database
+	Database db = new Database();
+	
+	private List<CD> listCD = new ArrayList<CD>();
+	private CD cd = new CD();
+	private static List<CD> listReadFile = new ArrayList<CD>();
+
+	public List<CD> getListCD() {
+		return listCD;
+	}
+
+	public void setListCD(List<CD> listCD) {
+		this.listCD = listCD;
+	}
+
+	public CDController(List<CD> listCD) {
+		super();
+		this.listCD = listCD;
+	}
+
+	public CDController() {
+		super();
+	}
+	
+	/**
+	 * this is method get all data of CD from sql cdstore
+	 * @return list CD
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public List<CD> getAllCD() throws ClassNotFoundException, SQLException {
+		listCD = new ArrayList<CD>();
+
+		try (Connection conn = db.connect()) {
+			Statement statement = conn.createStatement();
+			String sql = "Select * from cd";
+
+			ResultSet resultSet = statement.executeQuery(sql);
+			while (resultSet.next()) {
+				cd = new CD();
+				cd.setId(resultSet.getInt("id"));
+				cd.setName(resultSet.getString("name"));
+				cd.setSinger(resultSet.getString("singer"));
+				cd.setNumbersongs(resultSet.getInt("numbersongs"));
+				cd.setPrice(resultSet.getDouble("price"));
+
+				listCD.add(cd);
+			}
+
+		}
+		return listCD;
+	}
+
+	@Override
+	public String toString() {
+		try {
+			listCD = getAllCD();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String s = "==================List====================\n";
+		s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
+		for (int i = 0; i < listCD.size(); i++) {
+			s += listCD.get(i).toString();
+		}
+		return s;
+	}
+
+	/**
+	 * this is method readFile from file text, then add data into listReadFile
+	 * @param filePath
+	 * @return list
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 */
+	public List<CD> readFile(String filePath) throws ClassNotFoundException,
+			IOException {
+		listReadFile = new ArrayList<CD>();
+
+		ObjectInputStream in = null;
+		try {
+			in = new ObjectInputStream(new BufferedInputStream(
+					new FileInputStream(filePath)));
+
+			while (true) {
+				CD cd = (CD) in.readObject();
+				listReadFile.add(cd);
+			}
+
+		} catch (IOException ex) {
+			// System.out.println("Exception: " + ex.getMessage());
+			//ex.printStackTrace();
+		} finally {
+			in.close();
+		}
+
+		return listReadFile;
+
+	}
+
+	/**
+	 * this is method write data from listReadFile into file test
+	 * @param filePath
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public void writeFileList(String filePath) throws ClassNotFoundException,
+			SQLException {
+		listReadFile = getAllCD();
+		ObjectOutputStream out;
+		try {
+			out = new ObjectOutputStream(new FileOutputStream(filePath));
+			for (CD cd : listReadFile)
+				out.writeObject(cd);
+			out.close();
+			System.out.println("Write is successfully!");
+		} catch (IOException ex) {
+			// System.out.println("Exception: " + ex);
+			ex.printStackTrace();
+		} finally {
+			System.out.println("Done!");
+		}
+
+	}
+
+}

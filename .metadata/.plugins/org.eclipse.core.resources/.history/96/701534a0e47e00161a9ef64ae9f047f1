@@ -1,0 +1,19 @@
+package JDBC;
+
+import static org.junit.Assert.*;
+
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class testIsID {
+	CDController cdcl=new CDController();
+	@Test
+	public void test() throws ClassNotFoundException, SQLException {
+		boolean ex=true;
+		boolean ac=cdcl.isId(1);
+		assertFalse(ac);
+		
+	}
+
+}

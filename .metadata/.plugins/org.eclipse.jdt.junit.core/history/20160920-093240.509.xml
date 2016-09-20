@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AllTestsSalary" project="BigExercise2LePhuongThanh" tests="40" started="40" failures="0" errors="0" ignored="0">
+  <testsuite name="handlingStream.AllTestsSalary" time="0.07">
+    <testsuite name="handlingStream.TestAvgSalaryEmployee" time="0.05">
+      <testcase name="testAvgSalaryEmployee10" classname="handlingStream.TestAvgSalaryEmployee" time="0.044"/>
+      <testcase name="testAvgSalaryEmployee1" classname="handlingStream.TestAvgSalaryEmployee" time="0.002"/>
+      <testcase name="testAvgSalaryEmployee2" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+      <testcase name="testAvgSalaryEmployee3" classname="handlingStream.TestAvgSalaryEmployee" time="0.001"/>
+      <testcase name="testAvgSalaryEmployee4" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+      <testcase name="testAvgSalaryEmployee5" classname="handlingStream.TestAvgSalaryEmployee" time="0.001"/>
+      <testcase name="testAvgSalaryEmployee6" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+      <testcase name="testAvgSalaryEmployee7" classname="handlingStream.TestAvgSalaryEmployee" time="0.001"/>
+      <testcase name="testAvgSalaryEmployee8" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+      <testcase name="testAvgSalaryEmployee9" classname="handlingStream.TestAvgSalaryEmployee" time="0.001"/>
+    </testsuite>
+    <testsuite name="handlingStream.TestCountSalary30000000" time="0.006">
+      <testcase name="test1CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.004"/>
+      <testcase name="test9CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test8CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test7CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
+      <testcase name="test10CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test6CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test5CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test4CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+      <testcase name="test3CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
+      <testcase name="test2CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    </testsuite>
+    <testsuite name="handlingStream.TestHighestSalaryEmloyee" time="0.008">
+      <testcase name="testHighestSalaryEmloyee10" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee1" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee2" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee3" classname="handlingStream.TestHighestSalaryEmloyee" time="0.0"/>
+      <testcase name="testHighestSalaryEmloyee4" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee5" classname="handlingStream.TestHighestSalaryEmloyee" time="0.0"/>
+      <testcase name="testHighestSalaryEmloyee6" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee7" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee8" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+      <testcase name="testHighestSalaryEmloyee9" classname="handlingStream.TestHighestSalaryEmloyee" time="0.001"/>
+    </testsuite>
+    <testsuite name="handlingStream.TestLowestSalaryEmloyee" time="0.006">
+      <testcase name="testLowestSalaryEmloyee10" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+      <testcase name="testLowestSalaryEmloyee1" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+      <testcase name="testLowestSalaryEmloyee2" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+      <testcase name="testLowestSalaryEmloyee3" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+      <testcase name="testLowestSalaryEmloyee4" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+      <testcase name="testLowestSalaryEmloyee5" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+      <testcase name="testLowestSalaryEmloyee6" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+      <testcase name="testLowestSalaryEmloyee7" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+      <testcase name="testLowestSalaryEmloyee8" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+      <testcase name="testLowestSalaryEmloyee9" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    </testsuite>
+  </testsuite>
+</testrun>

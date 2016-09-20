@@ -6,7 +6,8 @@ import java.sql.SQLException;
 /**
  * @author: Le Phuong Thanh
  * @version: 1.0
- * @Date: 19/09/2016 @ Desciptione: Class Main
+ * @Date: 19/09/2016 
+ * @Desciptione: Class Main handling display content file test
  */
 public class MainClassTXT {
 	

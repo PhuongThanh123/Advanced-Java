@@ -27,6 +27,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 19/09/2016
+ * @Desciptione: Class controller CD
+ */
 public class CDController {
 	Database db = new Database();
 	private List<CD> listCD = new ArrayList<CD>();
@@ -221,7 +227,7 @@ public class CDController {
 				singer.appendChild(doc.createTextNode(cd.getSinger()));
 				CD.appendChild(singer);
 
-				// numbersong element
+				// numbersongs element
 				Element numbersongs = doc.createElement("numbersongs");
 				numbersongs.appendChild(doc.createTextNode(String.valueOf(cd
 						.getNumbersongs())));
@@ -261,11 +267,10 @@ public class CDController {
 		try {
 			listCD = getAllCD();
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String s = "==================List====================\n";
-		s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
+		s += "Id\t\tName \t\t\t Singer\t\t NumberSongs\t\tprice\n";
 		for (int i = 0; i < listCD.size(); i++) {
 			s += listCD.get(i).toString();
 		}

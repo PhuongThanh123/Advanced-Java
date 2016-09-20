@@ -18,9 +18,10 @@ import java.util.List;
  * @author: Le Phuong Thanh
  * @version: 1.0
  * @Date: 19/09/2016
- * @ Desciptione: Class controller CD
+ * @Desciption: Class controller CD
  */
 public class CDController {
+	
 	//Connect database
 	Database db = new Database();
 	
@@ -79,11 +80,10 @@ public class CDController {
 		try {
 			listCD = getAllCD();
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String s = "==================List====================\n";
-		s += "Id\t\tName \t\t\t Singer \t NumberSongs \t\tprice\n";
+		s += "Id\t\tName \t\t\t Singer\t\tNumberSongs\t\tprice\n";
 		for (int i = 0; i < listCD.size(); i++) {
 			s += listCD.get(i).toString();
 		}
@@ -112,8 +112,6 @@ public class CDController {
 			}
 
 		} catch (IOException ex) {
-			// System.out.println("Exception: " + ex.getMessage());
-			//ex.printStackTrace();
 		} finally {
 			in.close();
 		}
@@ -139,7 +137,6 @@ public class CDController {
 			out.close();
 			System.out.println("Write is successfully!");
 		} catch (IOException ex) {
-			// System.out.println("Exception: " + ex);
 			ex.printStackTrace();
 		} finally {
 			System.out.println("Done!");

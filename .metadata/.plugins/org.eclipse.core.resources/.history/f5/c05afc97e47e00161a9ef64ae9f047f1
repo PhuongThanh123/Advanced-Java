@@ -1,0 +1,15 @@
+package JDBC;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testIsID {
+	CDController cdcl=new CDController();
+	@Test
+	public void test() {
+		int ex=1;
+		int ac=CDController.
+	}
+
+}
