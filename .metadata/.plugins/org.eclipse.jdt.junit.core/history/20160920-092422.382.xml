@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCountSalary30000000" project="BigExercise2LePhuongThanh" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="handlingStream.TestCountSalary30000000" time="0.048">
-    <testcase name="test1CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.047"/>
-    <testcase name="test2CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
-  </testsuite>
-</testrun>
