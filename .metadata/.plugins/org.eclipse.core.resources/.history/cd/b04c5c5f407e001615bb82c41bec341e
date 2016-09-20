@@ -1,0 +1,21 @@
+package workWitXML;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+public class MainClassXML {
+
+	static String filePath = "src/workWithXML/cd.xml";
+	public static void main(String[] args) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
+	CDController cdController=new CDController();
+	CD cd=new CD();
+	cdController.textTransfomer(cd, filePath);
+	cdController.viewFile(filePath);
+
+	}
+
+}

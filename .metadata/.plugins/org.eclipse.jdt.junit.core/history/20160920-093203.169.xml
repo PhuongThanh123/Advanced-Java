@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCountSalary30000000" project="BigExercise2LePhuongThanh" tests="10" started="10" failures="0" errors="0" ignored="0">
+  <testsuite name="handlingStream.TestCountSalary30000000" time="0.043">
+    <testcase name="test1CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.04"/>
+    <testcase name="test9CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
+    <testcase name="test8CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test7CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test10CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test6CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test5CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
+    <testcase name="test4CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test3CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.0"/>
+    <testcase name="test2CountSalary30000000" classname="handlingStream.TestCountSalary30000000" time="0.001"/>
+  </testsuite>
+</testrun>

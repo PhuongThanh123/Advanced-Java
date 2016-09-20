@@ -1,0 +1,20 @@
+package handlingStream;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 19/09/2016
+ * @Desciptione: Class Test Avgage Salary Employee
+ */
+public class TestAvgSalaryEmployee {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

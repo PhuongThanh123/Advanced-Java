@@ -1,0 +1,86 @@
+package workWithTXT;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import JDBC.CD;
+import JDBC.CDController;
+
+public class MainClassTXT {
+	static String filePath="src/workWithTXT/cd.txt";
+	private static BufferedReader input = new BufferedReader(
+			new InputStreamReader(System.in));
+	private static CDController cdController = new CDController();
+	private static CD cd = new CD();
+	private static List<CD> listReadFile=new ArrayList<CD>();
+
+	public static void main(String []agrs) throws ClassNotFoundException, SQLException {
+		writeFile();
+		
+		
+	}
+	public static void writeFile() throws ClassNotFoundException, SQLException{
+		
+		
+		listReadFile= cdController.getAllCD();
+		cdController.setListCD(listReadFile);
+		
+		writeFile();
+		
+	
+	}
+
+	public List<CD> readFile(String filePath) throws ClassNotFoundException, IOException {
+		listReadFile= new ArrayList<CD>();
+		
+		ObjectInputStream in = null;
+		try {
+			in = new ObjectInputStream(new 
+					BufferedInputStream(new FileInputStream(filePath)));
+					
+			while (true) {
+				CD cd = (CD) in.readObject();
+				listReadFile.add(cd);
+			}
+			
+			
+		}
+		catch (IOException ex) {
+			//System.out.println("Exception: " + ex.getMessage());
+			ex.printStackTrace();
+		}
+		finally {
+			in.close();
+		}
+		
+		return listReadFile;
+	
+	}
+	
+	public void writeFile(String filePath) {
+		ObjectOutputStream out;
+		try {
+			out = new ObjectOutputStream(new FileOutputStream(filePath));
+			for (CD cd : listReadFile)
+				out.writeObject(cd);
+			out.close();
+		}
+		catch (IOException ex) {
+			//System.out.println("Exception: " + ex);
+			ex.printStackTrace();
+		}
+		
+	}
+	
+
+}
+

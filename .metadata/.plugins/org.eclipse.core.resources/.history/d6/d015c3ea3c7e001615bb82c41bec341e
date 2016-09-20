@@ -1,0 +1,26 @@
+package workWithTXT;
+
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+public class MainClassTXT {
+	static String filePath="src/workWithTXT/cd.txt";
+	
+	
+	private CDController cdController=new CDController();
+	
+
+	public static void main(String []agrs) throws ClassNotFoundException, SQLException, IOException {
+		
+		cdController.writeFileList(filePath);
+		readFile(filePath).stream().forEach(System.out::print);
+		
+		
+	}
+	
+
+	
+
+}
+

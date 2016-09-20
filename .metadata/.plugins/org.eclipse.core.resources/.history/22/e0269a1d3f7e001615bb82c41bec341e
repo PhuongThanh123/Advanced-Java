@@ -1,0 +1,11 @@
+package workWitXML;
+
+public class MainClassXML {
+
+	static String filePath = "src/workWithTXT/cd.txt";
+	public static void main(String[] args) {
+	
+
+	}
+
+}

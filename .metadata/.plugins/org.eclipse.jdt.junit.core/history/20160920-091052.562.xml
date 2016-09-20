@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestLowestSalaryEmloyee" project="BigExercise2LePhuongThanh" tests="10" started="10" failures="0" errors="0" ignored="0">
+  <testsuite name="handlingStream.TestLowestSalaryEmloyee" time="0.059">
+    <testcase name="testLowestSalaryEmloyee10" classname="handlingStream.TestLowestSalaryEmloyee" time="0.053"/>
+    <testcase name="testLowestSalaryEmloyee1" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+    <testcase name="testLowestSalaryEmloyee2" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    <testcase name="testLowestSalaryEmloyee3" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+    <testcase name="testLowestSalaryEmloyee4" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    <testcase name="testLowestSalaryEmloyee5" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    <testcase name="testLowestSalaryEmloyee6" classname="handlingStream.TestLowestSalaryEmloyee" time="0.0"/>
+    <testcase name="testLowestSalaryEmloyee7" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    <testcase name="testLowestSalaryEmloyee8" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+    <testcase name="testLowestSalaryEmloyee9" classname="handlingStream.TestLowestSalaryEmloyee" time="0.001"/>
+  </testsuite>
+</testrun>

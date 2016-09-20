@@ -1,0 +1,52 @@
+package workWithTXT;
+
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import JDBC.CD;
+import JDBC.CDController;
+
+public class MainClassTXT {
+	static String filePath="src/workWithTXT/cd.txt";
+	private static BufferedReader input = new BufferedReader(
+			new InputStreamReader(System.in));
+	private static CDController cdController = new CDController();
+	private static CD cd = new CD();
+	private static List<CD> listReadFile=new ArrayList<CD>();
+
+	public static void main(String []agrs) throws ClassNotFoundException, SQLException {
+		writeFile();
+		
+		
+	}
+	public static void writeFile() throws ClassNotFoundException, SQLException{
+		
+		
+		listReadFile= cdController.getAllCD();
+		cdController.setListCD(listReadFile);
+		
+		ObjectOutputStream out;
+		try {
+			out = new ObjectOutputStream(new FileOutputStream(filePath));
+			
+				out.writeObject(cd);
+			out.close();
+			System.out.println("Write is successfully");
+		}
+		catch (IOException ex) {
+			//System.out.println("Exception: " + ex);
+			ex.printStackTrace();
+		}
+		
+	
+	}
+	
+
+}
+

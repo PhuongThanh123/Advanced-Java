@@ -1,0 +1,27 @@
+package handlingStream;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+
+import org.junit.Test;
+
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 19/09/2016
+ * @Desciptione: Class Test Lowest Salary Employee
+ */
+public class TestLowestSalaryEmloyee {
+	
+	static List<Emloyee> listEmloyee = new ArrayList<Emloyee>();
+	DoubleSummaryStatistics statisticsEmloyee ;
+	
+	@Test
+	public void testLowestSalaryEmloyee() {
+		fail("Not yet implemented");
+	}
+
+}

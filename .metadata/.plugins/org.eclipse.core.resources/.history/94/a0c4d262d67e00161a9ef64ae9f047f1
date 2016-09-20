@@ -1,0 +1,283 @@
+package handlingStream;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+
+import org.junit.Test;
+
+/**
+ * @author: Le Phuong Thanh
+ * @version: 1.0
+ * @Date: 19/09/2016
+ * @Desciptione: Class Test Highest Salary Emloyee
+ */
+public class TestHighestSalaryEmloyee {
+	static List<Emloyee> listEmloyee = new ArrayList<Emloyee>();
+	DoubleSummaryStatistics statisticsEmloyee ;
+	
+	
+	MainClass mainClass=new MainClass();
+	@Test
+	public void testHighestSalaryEmloyee1() {
+		double ex =10000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+	}
+	@Test
+	public void testHighestSalaryEmloyee2() {
+		double ex =8000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 1000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee3() {
+		double ex =90000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 9000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 1000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee4() {
+		double ex =10000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee5() {
+		double ex =70000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 800000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 1000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee6() {
+		double ex =1200000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 1000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertNotEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee7() {
+		double ex =6700000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee8() {
+		double ex =3430000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee9() {
+		double ex =320000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 10000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertEquals(ex, ac,0.01);
+		
+	}
+	@Test
+	public void testHighestSalaryEmloyee10() {
+		double ex =70000000;
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Truong Ngoc Tinh Anh", 24, 2000000));
+		listEmloyee.add(new Emloyee("Truong Thi Thanh Thao", 23, 6000000));
+		listEmloyee.add(new Emloyee("Bui Thi Thuy Quynh", 26, 7000000));
+		listEmloyee.add(new Emloyee("Le Minh Tuan Hoa", 21, 3000000));
+		listEmloyee.add(new Emloyee("Phan Thi Kim Hien", 24, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Thi Lan Phuong", 28, 5000000));
+		listEmloyee.add(new Emloyee("Le Anh Minh Nguyen", 29, 4000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Van Nhi", 20, 2000000));
+		listEmloyee.add(new Emloyee("Tran Anh Ngoc Tu", 22, 5000000));
+		listEmloyee.add(new Emloyee("Nguyen Ngoc Quoc Huy", 23, 6000000));
+		listEmloyee.add(new Emloyee("Nguyen Tien Anh Minh", 21, 7000000));
+		listEmloyee.add(new Emloyee("Nguyen Le Cong Danh", 24, 8000000));
+		listEmloyee.add(new Emloyee("Nguyen Van Minh Minh", 24, 1000000));
+		listEmloyee.add(new Emloyee("Le Thieng Bao Anh", 28, 3400000));
+		
+		statisticsEmloyee = listEmloyee.stream()
+				.mapToDouble((e) -> e.getSalary()).summaryStatistics();
+		
+		double ac=MainClass.getSalaryHighest(listEmloyee, statisticsEmloyee);
+		assertNotEquals(ex, ac,0.01);
+		
+	}
+
+}

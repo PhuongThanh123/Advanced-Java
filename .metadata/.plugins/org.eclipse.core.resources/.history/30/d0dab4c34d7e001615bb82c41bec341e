@@ -1,0 +1,20 @@
+package handlingStream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainClass {
+	List<Emloyee> listEmloyee=new ArrayList<Emloyee>();
+	public static void main(String[] args) {
+		 
+
+	}
+	public static List<Emloyee> createList() {
+		listEmloyee =new ArrayList<Emloyee>();
+		listEmloyee = new ArrayList<Emloyee>();
+		listEmloyee.add(new Emloyee("Nguyen Van A", 24, 2000000));
+		
+	}
+
+
+}

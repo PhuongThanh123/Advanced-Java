@@ -1,0 +1,29 @@
+package handlingStream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+
+	}
+	public static List<String> createList() {
+		listColor = new ArrayList<String>();
+		listColor.add(new "White");
+		listColor.add("Black");
+		listColor.add("Red");
+		listColor.add("Pink");
+		listColor.add("Yellow");
+		listColor.add("Blue");
+		listColor.add("Gin");
+		listColor.add("Purple");
+		listColor.add("Orange");
+		listColor.add("Gray");
+		return listColor;
+
+	}
+
+
+}

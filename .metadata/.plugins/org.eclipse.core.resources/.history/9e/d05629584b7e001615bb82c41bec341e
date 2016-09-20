@@ -1,0 +1,42 @@
+package lambda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainClassLambda {
+	static List<String> listColor=new ArrayList<String>();
+
+	public static void main(String[] args) {
+	
+		createList();
+		toString(listColor);
+		
+		listColor=createList();
+		
+	}
+	public static List<String >createList(){
+		listColor=new ArrayList<String>();
+		listColor.add("White");
+		listColor.add("Black");
+		listColor.add("Red");
+		listColor.add("Pink");
+		listColor.add("Yellow");
+		listColor.add("Blue");
+		listColor.add("Gin");
+		listColor.add("Purple");
+		listColor.add("Orange");
+		listColor.add("Gray");
+		return listColor;
+		
+	}
+	public static void toString(List<String> listColor) {
+	
+		listColor.forEach(e->System.out.println(e));
+		
+	}
+	public static void sortLength(List<String> listColor) {
+		listColor.sort((o1, o2)-> new Integer(o1.length()).compareTo(new Integer(o2.length())));
+		toString(listColor);
+	}
+
+}

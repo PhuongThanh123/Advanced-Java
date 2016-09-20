@@ -1,0 +1,14 @@
+package handlingStream;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestLowestSalaryEmloyee {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

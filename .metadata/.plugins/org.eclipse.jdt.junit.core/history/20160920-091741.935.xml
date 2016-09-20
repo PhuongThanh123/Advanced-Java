@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAvgSalaryEmployee" project="BigExercise2LePhuongThanh" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="handlingStream.TestAvgSalaryEmployee" time="0.04">
+    <testcase name="testAvgSalaryEmployee1" classname="handlingStream.TestAvgSalaryEmployee" time="0.04"/>
+    <testcase name="testAvgSalaryEmployee2" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+    <testcase name="testAvgSalaryEmployee3" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+    <testcase name="testAvgSalaryEmployee4" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+    <testcase name="testAvgSalaryEmployee5" classname="handlingStream.TestAvgSalaryEmployee" time="0.0"/>
+  </testsuite>
+</testrun>

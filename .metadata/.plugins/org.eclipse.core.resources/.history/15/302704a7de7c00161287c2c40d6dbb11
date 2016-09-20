@@ -1,0 +1,15 @@
+package main;
+
+public class NormalDecorate extends ShapeDecorator{
+
+	@Override
+	public voi draw() {
+		
+		super.draw();
+		setBoder();
+	}
+	public void setBoder(){
+		System.out.println("Normal body!");
+	}
+
+}

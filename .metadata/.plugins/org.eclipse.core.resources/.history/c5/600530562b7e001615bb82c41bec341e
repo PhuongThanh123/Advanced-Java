@@ -1,0 +1,165 @@
+package JDBC;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+
+
+public class MainClass {
+
+		private static BufferedReader input = new BufferedReader(
+				new InputStreamReader(System.in));
+		private static CDController cdController = new CDController();
+		private static CD cd = new CD();
+
+		public static void main(String[] args) throws IOException,
+				ClassNotFoundException, SQLException {
+
+			boolean flag = true;
+			while (flag) {
+				System.out.println("=====Welcom to Store======");
+				System.out
+						.println("Select Menu: \n\t1) View CD \n\t2) Add New CD "
+								+ "\n\t3) Search Product \n\t4) Update CD "
+								+ "\n\t5) Delecte CD \n\t6) Exit ");
+				int number = Integer.parseInt(input.readLine());
+				switch (number) {
+				case 1:
+					System.out.println(cd.toString());
+					break;
+				case 2:
+					System.out.println(cdController.toString());
+					break;
+				case 3:
+					addNewProduct();
+					break;
+				case 4:
+					searchProduct();
+					break;
+				case 5:
+					updateProduct();
+					break;
+				case 6:
+					deleteProduct();
+					break;
+				case 7:
+					System.out.println("Done!");
+					flag = false;
+					break;
+				default:
+					System.out.println("Select wrong !");
+					if (selectYN())
+						continue;
+					else
+						flag = false;
+					break;
+				}
+			}
+
+		}
+
+		public static void addNewCD() throws IOException,
+				ClassNotFoundException, SQLException {
+
+
+			System.out.println("=====Add new CD=====");
+			System.out.println("Enter name: ");
+			String name = input.readLine();
+			
+			System.out.println("Enter singer: ");
+			String singer = input.readLine();
+
+			System.out.println("Enter price: ");
+			double price = Double.parseDouble(input.readLine());
+
+			System.out.println("Enter numbersongs: ");
+			int numbersongs = Integer.parseInt(input.readLine());
+
+			cd=new CD(name, singer, numbersongs, price);
+			cdController.getAllCD();
+			System.out.println(cdController.toString());
+
+		}
+
+		public static void searchCD() throws IOException,
+				ClassNotFoundException, SQLException {
+			System.out.println("===========Serach CD=============");
+			System.out.println("Enter name CD to search: ");
+			String name = input.readLine();
+			if (cdController.toStringSearch(name) == null) {
+				System.out.println(name + " is not find");
+			} else
+				System.out.println(cdController.toStringSearch(name));
+		}
+
+		public static void updateCD() throws NumberFormatException,
+				IOException, ClassNotFoundException, SQLException {
+			System.out.println("=====Update Product============");
+
+			System.out.println("Enter No.: ");
+			int id = Integer.parseInt(input.readLine());
+			
+			while(!cdController.isId(id)){
+				System.out.println("Enter No.: ");
+				 id = Integer.parseInt(input.readLine());
+			}
+
+			System.out.println("Enter price: ");
+			double price = Double.parseDouble(input.readLine());
+
+			System.out.println("Enter amount: ");
+			int amount = Integer.parseInt(input.readLine());
+
+			cd = new cd(numbersings,price);
+
+			productController.getListUpdate( product);
+			System.out.println(productController.toStringUpdate(product));
+
+		}
+		public static void deleteProduct() throws NumberFormatException, IOException, ClassNotFoundException, SQLException {
+			System.out.println("========= Delete Product=============");
+			
+			System.out.println("Enter id: ");
+			int id=Integer.parseInt(input.readLine());
+			
+			while(!productController.isId(id)){
+				System.out.println("Enter No.: ");
+				 id = Integer.parseInt(input.readLine());
+			}
+			productController.delete(id);
+			
+		}
+
+		public static boolean selectYN() throws IOException {
+			BufferedReader input = new BufferedReader(new InputStreamReader(
+					System.in));
+			System.out.println("Do you want to continue");
+			String st = input.readLine();
+			boolean flag = false;
+			while (!flag) {
+				switch (st) {
+				case "N":
+				case "NO":
+				case "no":
+				case "n":
+					return false;
+
+				case "Y":
+				case "YES":
+				case "yes":
+				case "y":
+					return true;
+				default:
+					System.out.println("Choose again!");
+					st = input.readLine();
+					break;
+				}
+
+			}
+
+			return false;
+		}
+	}
+
+}
